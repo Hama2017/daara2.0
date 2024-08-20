@@ -34,7 +34,7 @@ L'objectif principal de **DAARA 2.0** est de contribuer à la modernisation des 
 
 - **Backend** : [Laravel 10.0](https://laravel.com/)
 - **Frontend** : [Angular 16.0](https://angular.io/)
-- **Base de Données** : MySQL
+- **Base de Données** : PostgreSQL
 - **Serveur** : Apache/Nginx
 - **Gestion des Dépendances** : Composer pour PHP, npm pour Node.js
 
