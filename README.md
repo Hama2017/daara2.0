@@ -54,11 +54,11 @@ Cloner le dépôt :
 
     Utilisez la commande suivante pour cloner le dépôt GitHub et accéder au répertoire du projet :
 
-bash
+```bash
 
 git clone https://github.com/votre-utilisateur/daara2.0.git
 cd daara2.0
-
+bash
 Installation des dépendances Backend :
 
     Accédez au répertoire backend et installez les dépendances PHP en utilisant Composer :
