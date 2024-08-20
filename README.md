@@ -48,3 +48,87 @@ L'objectif principal de **DAARA 2.0** est de contribuer à la modernisation des 
 - MySQL
 - Angular CLI 16.0
 
+### Étapes d'Initialisation du Projet
+
+Cloner le dépôt :
+
+    Utilisez la commande suivante pour cloner le dépôt GitHub et accéder au répertoire du projet :
+
+bash
+
+git clone https://github.com/votre-utilisateur/daara2.0.git
+cd daara2.0
+
+Installation des dépendances Backend :
+
+    Accédez au répertoire backend et installez les dépendances PHP en utilisant Composer :
+
+bash
+
+cd backend
+composer install
+
+    Copiez le fichier d'exemple .env pour créer un nouveau fichier .env :
+
+bash
+
+cp .env.example .env
+
+    Générez la clé d'application Laravel :
+
+bash
+
+php artisan key:generate
+
+Configuration de l'environnement :
+
+    Ouvrez le fichier .env dans un éditeur de texte et configurez les paramètres de votre base de données PostgreSQL. Par exemple :
+
+    plaintext
+
+    DB_CONNECTION=pgsql
+    DB_HOST=127.0.0.1
+    DB_PORT=5432
+    DB_DATABASE=daara2_0
+    DB_USERNAME=your_username
+    DB_PASSWORD=your_password
+
+Migrer la base de données :
+
+    Exécutez la commande suivante pour migrer la base de données :
+
+bash
+
+php artisan migrate
+
+Installation des dépendances Frontend :
+
+    Accédez au répertoire frontend et installez les dépendances Node.js en utilisant npm :
+
+bash
+
+cd ../frontend
+npm install
+
+Lancer le serveur de développement Backend :
+
+    Retournez au répertoire backend et lancez le serveur Laravel :
+
+bash
+
+cd ../backend
+php artisan serve
+
+Lancer le serveur de développement Frontend :
+
+    Accédez au répertoire frontend et lancez le serveur de développement Angular :
+
+bash
+
+    cd ../frontend
+    ng serve
+
+Vous pouvez maintenant accéder à l'application via votre navigateur web. Le backend fonctionne par défaut sur http://127.0.0.1:8000, et le frontend sur http://127.0.0.1:4200.
+
+
+
