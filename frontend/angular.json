@@ -1,0 +1,175 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "smart_school_frontend": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/smart_school_frontend",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/plugins/bootstrap/js/popper.min.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.min.js",
+              "src/assets/plugins/bootstrap5-typehead/autocomplete.js",
+              "src/assets/js/typehead.js",
+              "src/assets/plugins/formwizard/jquery.smartWizard.js",
+              "src/assets/plugins/formwizard/fromwizard.js",
+              "src/assets/plugins/parsleyjs/parsley.min.js",
+              "src/assets/plugins/p-scroll/perfect-scrollbar.js",
+              "src/assets/plugins/p-scroll/pscroll.js",
+              "src/assets/plugins/p-scroll/pscroll-1.js",
+              "src/assets/plugins/accordion-Wizard-Form/jquery.accordion-wizard.min.js",
+              "src/assets/js/form-wizard.js",
+              "src/assets/plugins/fileuploads/js/fileupload.js",
+              "src/assets/plugins/fileuploads/js/file-upload.js",
+              "src/assets/plugins/fancyuploder/jquery.ui.widget.js",
+              "src/assets/plugins/fancyuploder/jquery.fileupload.js",
+              "src/assets/plugins/fancyuploder/jquery.iframe-transport.js",
+              "src/assets/plugins/fancyuploder/jquery.fancy-fileupload.js",
+              "src/assets/plugins/fancyuploder/fancy-uploader.js",
+              "src/assets/plugins/sidemenu/sidemenu.js",
+              "src/assets/plugins/sidebar/sidebar.js",
+              "src/assets/js/themeColors.js",
+              "src/assets/js/sticky.js",
+              "src/assets/switcher/js/switcher.js",
+              "src/assets/js/form-validation.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/custom-swicher.js",
+              "src/assets/js/test.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "smart_school_frontend:build:production"
+            },
+            "development": {
+              "browserTarget": "smart_school_frontend:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "smart_school_frontend:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "6ffb6e6e-cc6e-41bd-a0ef-674377d757a0"
+  }
+}
