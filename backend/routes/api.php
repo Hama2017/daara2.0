@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ApprenantController;
+use App\Http\Controllers\DocApprenantController;
+use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\TdNiveauController;
+use App\Http\Controllers\TrDocApprenantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegionController;
@@ -24,3 +29,8 @@ Route::apiResource('departements', DepartementController::class);
 Route::apiResource('doc-daaras', DocDaaraController::class);
 Route::apiResource('daaras', DaaraController::class);
 Route::apiResource('tr-doc-daaras', TrDocDaaraController::class);
+Route::apiResource('inscriptions', InscriptionController::class);
+Route::apiResource('tdNiveaux', TdNiveauController::class);
+Route::apiResource('doc-apprenants', DocApprenantController::class);
+Route::apiResource('apprenants', ApprenantController::class);
+Route::apiResource('tr-doc-apprenants', TrDocApprenantController::class);
