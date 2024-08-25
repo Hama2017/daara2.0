@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Discipline;
-use App\Http\Requests\StoreDisciplineRequest;
-use App\Http\Requests\UpdateDisciplineRequest;
-use App\Models\Profil;
-use http\Env\Request;
-use PSpell\Dictionary;
+use App\Models\Inscription;
+use App\Models\User;
+use Illuminate\Http\Request;
 
-class DisciplineController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,9 @@ class DisciplineController extends Controller
     public function index()
     {
         try {
-            $discpline = Discipline::all();
-            return response()->json($discpline);
+           // $user = User::all();
+            $user=User::with(['profil'])->get();
+            return response()->json($user);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
@@ -35,11 +33,11 @@ class DisciplineController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(\Illuminate\Http\Request $request)
+    public function store(Request $request)
     {
         try {
-            $discipline = Discipline::create($request->all());
-            return response()->json($discipline, 201);
+            $user = User::create($request->all());
+            return response()->json($user, 201);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
@@ -51,8 +49,8 @@ class DisciplineController extends Controller
     public function show($id)
     {
         try {
-            $discipline = Discipline::findOrFail($id);
-            return response()->json($discipline);
+            $user = User::findOrFail($id);
+            return response()->json($user);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 404);
         }
@@ -61,7 +59,7 @@ class DisciplineController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Discipline $discipline)
+    public function edit()
     {
         //
     }
@@ -69,12 +67,12 @@ class DisciplineController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(\Illuminate\Http\Request $request,$id)
+    public function update(Request $request, $id)
     {
         try {
-            $discipline=Discipline::findrFail($id);
-            $discipline->update($request->all());
-            return response()->json($discipline);
+            $user = User::findOrFail($id);
+            $user->update($request->all());
+            return response()->json($user);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
@@ -86,9 +84,9 @@ class DisciplineController extends Controller
     public function destroy($id)
     {
         try {
-            $discipline = Discipline::findOrFail($id);
-            $discipline->delete();
-            return response()->json(['message' => 'Discipline supprimée avec succès']);
+            $user = User::findOrFail($id);
+            $user->delete();
+            return response()->json(['message' => 'User supprimée avec succès']);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }

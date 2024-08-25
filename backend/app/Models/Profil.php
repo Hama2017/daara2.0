@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profil extends Model
 {
+    protected $guarded=[];
     use HasFactory;
+
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 }

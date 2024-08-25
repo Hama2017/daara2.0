@@ -3,8 +3,11 @@
 use App\Http\Controllers\ApprenantController;
 use App\Http\Controllers\DocApprenantController;
 use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\TdNiveauController;
+use App\Http\Controllers\TrDisciplineEnseignantController;
 use App\Http\Controllers\TrDocApprenantController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegionController;
@@ -12,6 +15,7 @@ use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\DocDaaraController;
 use App\Http\Controllers\DaaraController;
 use App\Http\Controllers\TrDocDaaraController;
+use App\Http\Controllers\DisciplineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +38,7 @@ Route::apiResource('tdNiveaux', TdNiveauController::class);
 Route::apiResource('doc-apprenants', DocApprenantController::class);
 Route::apiResource('apprenants', ApprenantController::class);
 Route::apiResource('tr-doc-apprenants', TrDocApprenantController::class);
+Route::apiResource('disciplines', DisciplineController::class);
+Route::apiResource('profils', ProfilController::class);
+Route::apiResource('users', UserController::class);
+Route::apiResource('trDisciplinesEnseignants', TrDisciplineEnseignantController::class);

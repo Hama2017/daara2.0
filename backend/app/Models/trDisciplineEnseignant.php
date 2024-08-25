@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class trDisciplineEnseignant extends Model
 {
+    protected $guarded=[];
     use HasFactory;
     public function enseignants()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class,'idUser');
     }
     public function discipline()
     {
-        return $this->hasMany(Discipline::class);
+        return $this->belongsTo(Discipline::class,'idDiscipline');
     }
 }
