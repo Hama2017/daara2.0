@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Profil::class);
     }
+
+    public function daaras()
+    {
+        return $this->hasMany(Daara::class, 'responsable_id');
+    }
 }
