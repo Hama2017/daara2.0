@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header border-bottom-0">
+          <h3>Création Profil</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="profilForm" (ngSubmit)="insertDataProfil()">
+            <section>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="control-group form-group">
+                    <label class="form-label">Nom Profil *</label>
+                    <input 
+                      type="text" 
+                      class="form-control required" 
+                      formControlName="nomProfil"
+                      placeholder="Nom du profil" 
+                      required>
+                    <div *ngIf="profilForm.get('nomProfil')?.hasError('required') && profilForm.get('nomProfil')?.touched"
+                      class="text-danger">
+                      Nom du profil est requis.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button [disabled]="profilForm.invalid" class="btn btn-primary btn-sm" type="submit">Enregistrer</button>
+            </section>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card mt-3">
+    <div class="card-header">
+      <h3 class="card-title">Liste des Profils</h3>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered border text-nowrap mb-0" id="basic-edit">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Les Profils</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of profils; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ p.nomProfil }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
