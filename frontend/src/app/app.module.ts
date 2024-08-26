@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {LeafletModule} from "@asymmetrik/ngx-leaflet";
+import {HttpClientModule} from "@angular/common/http";
 import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
@@ -19,6 +21,8 @@ import { ProfilComponent } from './components/profil/profil.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    LeafletModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
