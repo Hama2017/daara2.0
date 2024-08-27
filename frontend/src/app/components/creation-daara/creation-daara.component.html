@@ -1,0 +1,124 @@
+<div class="row mt-9">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header border-bottom-0">
+                <div class="card-title">
+                    Enrollement Daara
+                </div>
+            </div>
+            <div class="card-body">
+                <form novalidate>
+                    <div id="wizard1">
+                        <h3>Informations Daara</h3>
+                        <section>
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Nom du daara *</label>
+                                        <input type="text" class="form-control required" name="nomDaara"  placeholder="Nom" required>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Adresse *</label>
+                                        <input type="text" class="form-control required" name="adresseDaara" placeholder="Adresse du daara" required>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Coordonness geographique *</label>
+                                        <input type="text" class="form-control required" name="coordonneesDaara" placeholder="Renseigner les coordonnees du daara sous le format [latitude,longitude] " required>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Date de creation *</label>
+                                        <input type="date" class="form-control required" name="dateCreationDaara" placeholder="Date de creation du daara" required>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Telephone *</label>
+                                        <input type="text" class="form-control required" name="telephoneDaara" placeholder="Telephone du daara" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Email </label>
+                                        <input type="email" class="form-control" name="emailDaara"  placeholder="Email du daara">
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Description </label>
+                                        <input type="text" class="form-control " maxlength="9" name="descriptionDaara"  placeholder="Breve description ou remarques concernant le daara">
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Departement *</label>
+                                        <select class="form-control form-select" name="departmentId" (change)="onDepartementChange($event)">
+                                            <option *ngFor="let departement of departements" [value]="departement.id">
+                                                {{ departement.nomDepartement }} - {{ departement.region.nomRegion }}
+                                            </option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <h3>Informations Parents</h3>
+                        <section>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Informations du Père</h5>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Prenom *</label>
+                                        <input type="text" class="form-control required" name="PrenomPere"  placeholder="Prenom du Père">
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Nom *</label>
+                                        <input type="text" class="form-control required" name="NomPere"  placeholder="Nom du Père">
+                                    </div>
+
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Telephone</label>
+                                        <input type="text" class="form-control required" name="TelephonePere"  placeholder="Téléphone du Père">
+                                    </div>
+
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Adresse</label>
+                                        <input type="text" class="form-control required" name="AdressePere"  placeholder="Adresse du Père">
+                                    </div>
+
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control required" name="EmailPere"  placeholder="Email du Père">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Informations de la Mère</h5>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Prenom *</label>
+                                        <input type="text" class="form-control required" name="PrenomMere"  placeholder="Prenom de la Mère">
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Nom *</label>
+                                        <input type="text" class="form-control required" name="NomMere"  placeholder="Nom de la Mère">
+                                    </div>
+
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Telephone</label>
+                                        <input type="text" class="form-control required" name="TelephoneMere"  placeholder="Téléphone de la Mère">
+                                    </div>
+
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Adresse</label>
+                                        <input type="text" class="form-control required" name="AdresseMere"  placeholder="Adresse de la Mère">
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control required" name="EmailMere"  placeholder="Email de la Mère">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

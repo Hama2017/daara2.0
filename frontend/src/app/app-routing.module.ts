@@ -4,6 +4,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { AdminComponent } from "./components/admin/admin.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ProfilComponent } from "./components/profil/profil.component";
+import {CreationDaaraComponent} from "./components/creation-daara/creation-daara.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profil', component: ProfilComponent },
+      { path: 'ajout-daara', component: CreationDaaraComponent },
     ]},
 ];
 

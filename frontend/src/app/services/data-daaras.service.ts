@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ConstModule} from "../consts.module";
-import {map, Observable} from "rxjs";
+import {map, Observable, of} from "rxjs";
 import {Daara} from "../models/daara";
+import {Profil} from "../models/profil";
+import {catchError} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +32,18 @@ export class DataDaarasService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<any>(url).pipe(
         map(data => new Daara(data)) // Désérialisation en instance de Ecole
+    );
+  }
+  insertDataDaara(data: Daara): Observable<Daara> {
+    return this.http.post<Daara>(this.apiUrl, data, this.httpOptions).pipe(
+        catchError(error => {
+          const formattedError = {
+            success: false,
+            message: error.message,
+            error: error.statusText || 'Erreur Inconnue'
+          };
+          return of(formattedError as any);
+        })
     );
   }
 }
