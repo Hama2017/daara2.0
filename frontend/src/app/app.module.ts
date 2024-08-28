@@ -9,7 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import {HttpClientModule} from "@angular/common/http";
 import { ProfilComponent } from './components/profil/profil.component';
-import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
+import {CreationDaaraComponent} from "./components/creation-daara/creation-daara.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { EditProfilComponent } from './components/edit-profil/edit-profil.compon
     AdminComponent,
     DashboardComponent,
     ProfilComponent,
-    EditProfilComponent
+    CreationDaaraComponent,
   ],
   imports: [
     BrowserModule,
