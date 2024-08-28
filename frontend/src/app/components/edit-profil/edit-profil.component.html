@@ -1,0 +1,31 @@
+<div class="row mt-9">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header border-bottom-0">
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="updateDataProfil()" >
+            <div>
+              <h3>Modification Profil</h3>
+              <section>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="control-group form-group">
+                      <label class="form-label">Nom du Profil *</label>
+                      <input type="text" class="form-control required" name="nomProfil" placeholder="Nom du Profil" [(ngModel)]="profil.nomProfil" required>
+                      <div *ngIf="profil.nomProfil.trim() === '' && profilForm.controls['nomProfil'].touched" class="text-danger">
+                        Nom du Profil est requis.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button [disabled]="profilForm.invalid" class="btn btn-primary btn-sm" type="submit">Appliquer</button>
+                <a class="btn btn-sm btn-danger m-3" routerLinkActive="active" routerLink="/admin/profil">Annuler</a>
+              </section>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

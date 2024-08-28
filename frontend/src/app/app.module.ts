@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import {HttpClientModule} from "@angular/common/http";
 import { ProfilComponent } from './components/profil/profil.component';
+import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,16 @@ import { ProfilComponent } from './components/profil/profil.component';
     LoginComponent,
     AdminComponent,
     DashboardComponent,
-    ProfilComponent
+    ProfilComponent,
+    EditProfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LeafletModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

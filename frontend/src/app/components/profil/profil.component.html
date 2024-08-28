@@ -44,12 +44,21 @@
             <tr>
               <th>#</th>
               <th>Les Profils</th>
+              <th name="bstable-actions">Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let p of profils; let i = index">
               <td>{{ i + 1 }}</td>
               <td>{{ p.nomProfil }}</td>
+              <td>
+                <button id="bEdit"  class="btn btn-sm btn-primary m-2"  [routerLink]="['/admin/edit-profil', p.id]">
+                    <span class="fe fe-edit"> </span>
+                </button>
+                  <button id="bDel" (click)="deleteDataProfil(p.id)" type="button" class="btn  btn-sm btn-danger">
+                    <span class="fe fe-trash-2"> </span>
+                  </button>
+            </td>
             </tr>
           </tbody>
         </table>

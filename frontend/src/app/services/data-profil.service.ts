@@ -131,7 +131,7 @@ export class DataProfilService {
           message: error.message,
           error: error.statusText || 'Erreur Inconnue'
         };
-        return of(formattedError as any);
+        return of(formattedError);
       })
     );
   }

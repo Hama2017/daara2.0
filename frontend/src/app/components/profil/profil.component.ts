@@ -47,4 +47,27 @@ export class ProfilComponent implements OnInit {
       this.profilForm.reset();
     });
   }
+  deleteDataProfil(id: any) {
+    Swal.fire({
+      title: 'Êtes-vous sûr?',
+      text: "Voulez-vous vraiment supprimer ce profil ?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Oui, supprimer',
+      cancelButtonText: 'Non, annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.dataProfilService.deleteDataProfil(id).subscribe(res => {
+          Swal.fire({
+            title: 'Succès',
+            text: 'Suppression effectuée avec succès !',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+          this.getDataProfil();
+        });
+      }
+    });
+  }
+  
 }
