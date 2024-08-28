@@ -50,7 +50,7 @@
                         <div class="drop-heading">
                           <div class="text-center">
                             <h5 class="text-dark mb-0 fs-14 fw-semibold">Hama Ba</h5>
-                            <small class="text-muted">Senior Admin</small>
+                            <small class="text-muted">Admin</small>
                           </div>
                         </div>
                         <div class="dropdown-divider m-0"></div>
@@ -78,7 +78,7 @@
           <div class="side-header">
             <a class="header-brand1" [routerLink]="['/admin']">
               <img src="../assets/images/brand/logo-white.png" class="header-brand-img desktop-logo" alt="logo">
-              <img src="../assets/images/brand/icon-white.png" class="header-brand-img toggle-logo"
+              <img src="../asssets/images/brand/icon-white.png" class="header-brand-img toggle-logo"
                    alt="logo">
               <img src="assets/images/brand/logo-smartschool-1.png" class="header-brand-img light-logo" alt="logo">
               <img src="assets/images/brand/logo-smartschool.png"  style="padding: 70px;" class="header-brand-img light-logo1"
@@ -101,7 +101,7 @@
                 <h3>Gestion Daaras</h3>
               </li>
               <li class="slide">
-                  <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon icon fa fa-graduation-cap"></i><span
+                  <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon icon fa fa-institution"></i><span
                   class="side-menu__label">Daaras</span><i
                   class="angle fe fe-chevron-right"></i>
                 </a>
@@ -120,8 +120,13 @@
                   </li>
                 </ul>
               </li>
+                <li class="slide">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon icon fa fa-area-chart"></i><span
+                            class="side-menu__label">Statistiques</span>
+                    </a>
+                </li>
               <li class="sub-category">
-                <h3>Parametrages Inscription</h3>
+                <h3>Parametrages</h3>
               </li>
               <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
@@ -189,45 +194,9 @@
               </li>
               <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
-                  class="side-menu__icon fa fa-th"></i><span
-                  class="side-menu__label">Niveau Classe</span><i
-                  class="angle fe fe-chevron-right"></i>
+                  class="side-menu__icon fa fa-cogs"></i><span
+                  class="side-menu__label">General</span>
                 </a>
-                <ul class="slide-menu">
-                  <li class="panel sidetab-menu">
-                    <div class="panel-body tabs-menu-body p-0 border-0">
-                      <div class="tab-content">
-                        <div class="tab-pane active" id="side1">
-                          <ul class="sidemenu-list">
-                            <li><a [routerLink]="['/admin/niveau-classe/ajout']" class="slide-item">Activer niveaux-classes</a></li>
-                            <li><a [routerLink]="['/admin/niveau-classe/edit']" class="slide-item">Liste niveaux-classes</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="slide">
-                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
-                  class="side-menu__icon fa fa-tags"></i><span
-                  class="side-menu__label">Classe</span><i
-                  class="angle fe fe-chevron-right"></i>
-                </a>
-                <ul class="slide-menu">
-                  <li class="panel sidetab-menu">
-                    <div class="panel-body tabs-menu-body p-0 border-0">
-                      <div class="tab-content">
-                        <div class="tab-pane active" id="side1">
-                          <ul class="sidemenu-list">
-                            <li><a [routerLink]="['/admin/classe/ajout']" class="slide-item">Ajouter classes</a></li>
-                            <li><a [routerLink]="['/admin/classe/edit']" class="slide-item">Modifier classes</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
               </li>
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"

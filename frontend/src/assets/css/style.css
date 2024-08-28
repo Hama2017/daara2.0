@@ -55608,12 +55608,12 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
 }
 
 .wizard>.steps .done a {
-    color: #ef9b11;
+    color: #000000;
 }
 
 .wizard>.steps .done a:hover,
 .wizard>.steps .done a:active {
-    color: #ef9b11;
+    color: #17661e;
 }
 
 .wizard>.steps .done a .title,
@@ -55625,7 +55625,7 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
 .wizard>.steps .done a .number,
 .wizard>.steps .done a:hover .number,
 .wizard>.steps .done a:active .number {
-  background-color: #ef9b11;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -55677,7 +55677,7 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
 }
 
 .wizard>.actions>ul>li:last-child a {
-    background-color: #ef9b11;
+    background-color: #000000;
 }
 
 .wizard>.actions a {

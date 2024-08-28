@@ -6,6 +6,7 @@ import {Daara} from "../../models/daara";
 import Swal from "sweetalert2";
 import {User} from "../../models/user";
 import {DataUserService} from "../../services/data-user.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-creation-daara',
   templateUrl: './creation-daara.component.html',
@@ -17,7 +18,8 @@ export class CreationDaaraComponent implements AfterViewInit{
   daara:Daara=new Daara();
   constructor(private departementService: DataDepartementService,
               private daaraService:DataDaarasService,
-              private userSevice:DataUserService) { }
+              private userSevice:DataUserService,
+              private router: Router) { }
   ngAfterViewInit(): void {
     this.initializeWizard();
     this.getDepartementdata();
@@ -94,11 +96,8 @@ export class CreationDaaraComponent implements AfterViewInit{
             this.daara.department_id = ($("select[name='departmentList']").val() as any); // Changement input en select
             break;
           case 1:
-            //this.daara.responsable_id = ($("select[name='responsableList']").val() as any); // Changement input en select
             const selectedValue = $("select[name='responsableList']").val();
-            console.log('Valeur sélectionnée:', selectedValue);
             this.daara.responsable_id = parseInt(selectedValue as string, 10);
-            console.log('ID du responsable sélectionné:', this.daara.responsable_id);
             break;
           case 2:
             break;
@@ -106,7 +105,7 @@ export class CreationDaaraComponent implements AfterViewInit{
             break;
         }
         if (currentIndex < newIndex) {
-          return true;
+          return this.validateForm(currentIndex);
         } else {
           return true;
         }
@@ -121,7 +120,9 @@ export class CreationDaaraComponent implements AfterViewInit{
             text: 'Le daara ' + this.daara.nomDaara + ' a été enregistré avec succès.',
             icon: 'success',
             showConfirmButton: true,
+            confirmButtonColor:'#17661e'
           });
+          this.router.navigate(['/admin/']);
         }, (err) => {
           Swal.fire({
             title: 'Erreur',
@@ -133,5 +134,34 @@ export class CreationDaaraComponent implements AfterViewInit{
       }
     });
   }
+  validateForm(index: number , otherData:any = {}): boolean {
+    let isValid = true;
+    const messages = [];
 
+    switch (index) {
+      case 0:
+        const {nomDaara, adresseDaara, dateCreationDaara, coordonneesDaara, emailDaara, telephoneDaara, } = this.daara;
+        if (!nomDaara) messages.push('Le champ "Nom" est obligatoire.');
+        if (!adresseDaara) messages.push('Le champ "Adresse" est obligatoire.');
+        if (!dateCreationDaara) messages.push('Le champ "Date de creation" est obligatoire.');
+        if (!coordonneesDaara) messages.push('Le champ "Coordonnees" est obligatoire.');
+        if (!telephoneDaara) messages.push('Le champ "Telephone" est obligatoire.');
+        if (coordonneesDaara.length < 18) messages.push('Le champ "Coordoonnees" est invalide.');
+        break;
+      case 1:
+        break;
+    }
+    // Ajoutez d'autres validations pour les étapes suivantes si nécessaire
+    if (messages.length > 0) {
+      Swal.fire({
+        title: 'Erreur',
+        html: messages.join('<br>'),
+        icon: 'error',
+        confirmButtonColor: '#17661e',
+      });
+      isValid = false;
+    }
+
+    return isValid;
+  }
 }
