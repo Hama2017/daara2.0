@@ -31,7 +31,7 @@ export class DataDaarasService {
   getDaarasById(id: number): Observable<Daara> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<any>(url).pipe(
-        map(data => new Daara(data)) // Désérialisation en instance de Ecole
+        map(data => new Daara(data)) // Désérialisation en instance de daara
     );
   }
   insertDataDaara(data: Daara): Observable<Daara> {

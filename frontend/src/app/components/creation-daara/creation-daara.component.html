@@ -47,74 +47,29 @@
                                     </div>
                                     <div class="control-group form-group">
                                         <label class="form-label">Departement *</label>
-                                        <select class="form-control form-select" name="departmentId" (change)="onDepartementChange($event)">
-                                            <option *ngFor="let departement of departements" [value]="departement.id">
-                                                {{ departement.nomDepartement }} - {{ departement.region.nomRegion }}
-                                            </option>
-                                        </select>
+                                        <select class="form-control form-select" name="departmentList" id="departementList">
 
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <h3>Informations Parents</h3>
+                        <h3>Responsable</h3>
                         <section>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5>Informations du Père</h5>
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Prenom *</label>
-                                        <input type="text" class="form-control required" name="PrenomPere"  placeholder="Prenom du Père">
-                                    </div>
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Nom *</label>
-                                        <input type="text" class="form-control required" name="NomPere"  placeholder="Nom du Père">
-                                    </div>
+                            <div class="control-group form-group">
+                                <label class="form-label">Responsable du Daara </label>
+                                <select class="form-control form-select" name="responsableList" id="responsableList">
 
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Telephone</label>
-                                        <input type="text" class="form-control required" name="TelephonePere"  placeholder="Téléphone du Père">
-                                    </div>
-
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Adresse</label>
-                                        <input type="text" class="form-control required" name="AdressePere"  placeholder="Adresse du Père">
-                                    </div>
-
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control required" name="EmailPere"  placeholder="Email du Père">
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <h5>Informations de la Mère</h5>
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Prenom *</label>
-                                        <input type="text" class="form-control required" name="PrenomMere"  placeholder="Prenom de la Mère">
-                                    </div>
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Nom *</label>
-                                        <input type="text" class="form-control required" name="NomMere"  placeholder="Nom de la Mère">
-                                    </div>
-
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Telephone</label>
-                                        <input type="text" class="form-control required" name="TelephoneMere"  placeholder="Téléphone de la Mère">
-                                    </div>
-
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Adresse</label>
-                                        <input type="text" class="form-control required" name="AdresseMere"  placeholder="Adresse de la Mère">
-                                    </div>
-                                    <div class="control-group form-group">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control required" name="EmailMere"  placeholder="Email de la Mère">
-                                    </div>
-
-                                </div>
+                                </select>
                             </div>
-
+                        </section>
+                        <h3>Documents</h3>
+                        <section>
+                            <p>Les documents a soummettre pour la creation d'un daara</p>
+                        </section>
+                        <h3>Recapitulatif</h3>
+                        <section>
+                            <p>Recap des saisies</p>
                         </section>
                     </div>
                 </form>
