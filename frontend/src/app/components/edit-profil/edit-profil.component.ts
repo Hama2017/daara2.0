@@ -45,7 +45,7 @@ export class EditProfilComponent implements OnInit {
       return;
     }
 
-    this.dataProfilService.updateDataProfil(this.id, this.profilForm.value).subscribe(res => {
+    this.dataProfilService.updateDataProfil(this.id, this.profil).subscribe(res => {
       Swal.fire({
         title: 'Succès',
         text: 'Le profil ' + this.profil.nomProfil + ' a été mis à jour avec succès.',
