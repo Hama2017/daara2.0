@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Apprenant;
+use App\Models\Inscription;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +23,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RegionSeeder::class,
             DepartementSeeder::class,
-            DaaraSeeder::class
+            ProfilSeeder::class,
+            UserSeeder::class,
+            DaaraSeeder::class,
+            TdNiveauSeeder::class,
+            ApprenantSeeder::class,
+            InscriptionSeeder::class,
         ]);
     }
 }
