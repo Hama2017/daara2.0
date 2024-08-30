@@ -13,8 +13,8 @@ import {CreationDaaraComponent} from "./components/creation-daara/creation-daara
 import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
 import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component'; 
-
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +27,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     UserComponent,
     AddUserComponent,
     EditUserComponent,
+      ListeDaaraComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     LeafletModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

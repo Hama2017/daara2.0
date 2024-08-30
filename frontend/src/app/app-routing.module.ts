@@ -9,6 +9,7 @@ import { EditProfilComponent } from './components/edit-profil/edit-profil.compon
 import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profil', component: ProfilComponent },
       { path: 'ajout-daara', component: CreationDaaraComponent },
+      { path: 'liste-daaras', component: ListeDaaraComponent },
       { path: 'edit-profil/:id', component: EditProfilComponent },
       { path: 'user', component: UserComponent },
       { path: 'add-user', component: AddUserComponent },
