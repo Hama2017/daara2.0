@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { ConstModule } from '../consts.module'; 
 import { User } from '../models/user'; 
+import { Profil } from '../models/profil';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,19 @@ export class DataUserService {
         return of(formattedError as any);
       })
     );
+  }
+    // Méthode pour récupérer les profils
+    getProfils(): Observable<Profil[]> {
+      return this.httpclient.get<Profil[]>(`${this.const.url}/profils`).pipe(
+        catchError(this.handleError<Profil[]>('getProfils', []))
+      );
+    }
+      // Gestion des erreurs
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
   }
 
   /**

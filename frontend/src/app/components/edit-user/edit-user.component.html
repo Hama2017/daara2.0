@@ -1,0 +1,62 @@
+<div class="row mt-9">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header border-bottom-0">
+          <h3>Modification de l'utilisateur</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="userForm" (ngSubmit)="updateUser()" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="nomUser" class="form-label">Nom</label>
+              <input id="nomUser" formControlName="nomUser" class="form-control" />
+              <div *ngIf="userForm.controls['nomUser'].invalid && userForm.controls['nomUser'].touched" class="text-danger">
+                Nom est requis et doit être un texte de maximum 100 caractères.
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="prenomUser" class="form-label">Prénom</label>
+              <input id="prenomUser" formControlName="prenomUser" class="form-control" />
+              <div *ngIf="userForm.controls['prenomUser'].invalid && userForm.controls['prenomUser'].touched" class="text-danger">
+                Prénom est requis et doit être un texte de maximum 100 caractères.
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="emailUser" class="form-label">Email</label>
+              <input id="emailUser" formControlName="emailUser" type="email" class="form-control" />
+              <div *ngIf="userForm.controls['emailUser'].invalid && userForm.controls['emailUser'].touched" class="text-danger">
+                Email est requis et doit être valide.
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="telephoneUser" class="form-label">Téléphone</label>
+              <input id="telephoneUser" formControlName="telephoneUser" class="form-control" />
+              <div *ngIf="userForm.controls['telephoneUser'].invalid && userForm.controls['telephoneUser'].touched" class="text-danger">
+                Téléphone est requis.
+              </div>
+            </div>
+  
+            
+  
+            <div class="mb-3">
+              <label for="idProfil" class="form-label">Profil</label>
+              <select id="idProfil" formControlName="idProfil" class="form-select">
+                <option *ngFor="let profil of profils" [value]="profil.id">{{ profil.nomProfil }}</option>
+              </select>
+              <div *ngIf="userForm.controls['idProfil'].invalid && userForm.controls['idProfil'].touched" class="text-danger">
+                Profil est requis.
+              </div>
+            </div>
+  
+            <input type="hidden" formControlName="mdpUser" value="passer">
+  
+            <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Modifier l'utilisateur</button>
+            <a class="btn btn-sm btn-danger m-3" routerLink="/admin/user">Annuler</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

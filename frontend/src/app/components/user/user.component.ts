@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { DataUserService } from '../../services/data-user.service';
 import { User } from 'src/app/models/user';
+import { Profil } from 'src/app/models/profil';
 
 @Component({
   selector: 'app-user',
@@ -12,6 +13,7 @@ import { User } from 'src/app/models/user';
 })
 export class UserComponent implements OnInit {
   users: User[] = [];
+  profiles: Profil[] = [];
   user = new User();
   userForm: FormGroup;
 
@@ -31,8 +33,22 @@ export class UserComponent implements OnInit {
   }
 
   getDataUser(): void {
-    this.dataUserService.getDataUser().subscribe(res => {
-      this.users = res;
+    // Récupère les utilisateurs
+    this.dataUserService.getDataUser().subscribe(users => {
+      this.users = users;
+
+      // Ensuite, récupère les profils
+      this.dataUserService.getProfils().subscribe(profils => {
+        this.profiles = profils;
+
+        // Associe chaque utilisateur à son profil
+        this.users.forEach(user => {
+          const profil = this.profiles.find(p => p.id === user.idProfil);
+          if (profil) {
+            user.nomProfil = profil.nomProfil;
+          }
+        });
+      });
     });
   }
 

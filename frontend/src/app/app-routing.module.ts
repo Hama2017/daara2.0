@@ -7,6 +7,8 @@ import { ProfilComponent } from "./components/profil/profil.component";
 import {CreationDaaraComponent} from "./components/creation-daara/creation-daara.component";
 import { EditProfilComponent } from './components/edit-profil/edit-profil.component';
 import { UserComponent } from './components/user/user.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
       { path: 'ajout-daara', component: CreationDaaraComponent },
       { path: 'edit-profil/:id', component: EditProfilComponent },
       { path: 'user', component: UserComponent },
+      { path: 'add-user', component: AddUserComponent },
+      { path: 'edit-user/:id', component: EditUserComponent },
     ]},
 ];
 

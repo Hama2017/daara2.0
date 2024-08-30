@@ -3,6 +3,9 @@
         <h3 class="card-title">Liste des Utilisateurs</h3>
     </div>
     <div class="card-body">
+        <button id="bEdit" class="btn btn-sm btn-primary m-2 float-end" [routerLink]="['/admin/add-user']">
+            <span class="fe fe-plus"> </span>
+        </button>
         <div class="table-responsive">
             <table class="table table-bordered border text-nowrap mb-0" id="basic-edit">
                 <thead>
@@ -23,7 +26,7 @@
                         <td>{{ user.prenomUser }}</td>
                         <td>{{ user.emailUser }}</td>
                         <td>{{ user.telephoneUser }}</td>
-                        <td>{{ user.idProfil}}</td>
+                        <td>{{ user.nomProfil}}</td>
                         <td>
                             <button id="bEdit" class="btn btn-sm btn-primary m-2" [routerLink]="['/admin/edit-user', user.id]">
                                 <span class="fe fe-edit"> </span>

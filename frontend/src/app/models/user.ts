@@ -6,4 +6,5 @@ export class User {
     mdpUser!: string;
     telephoneUser!: string;
     idProfil?: number;
+    nomProfil!: string;
 }
