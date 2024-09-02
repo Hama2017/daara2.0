@@ -17,7 +17,7 @@ class DaaraController extends Controller
             return response()->json($daaras);
         } catch (Exception $e) {
             // Gestion des exceptions pour les erreurs inattendues
-            return response()->json(['error' => 'Erreur lors de la récupération des Daaras'], 500);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
     }
 
@@ -61,7 +61,7 @@ class DaaraController extends Controller
             return response()->json(['error' => $e->errors()], 422);
         } catch (Exception $e) {
             // Gestion des exceptions pour les erreurs inattendues
-            return response()->json(['error' => 'Erreur lors de la création du Daara'], 500);
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 

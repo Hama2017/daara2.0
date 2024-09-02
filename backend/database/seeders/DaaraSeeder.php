@@ -24,7 +24,7 @@ class DaaraSeeder extends Seeder
                 'dateCreationDaara' => '2014-08-06',
                 'descriptionDaara' => 'Daara moderne',
                 'department_id' => 9,
-                'responsable_id' => 3,
+                'responsable_id' => 1,
             ],
             [
                 'nomDaara' => 'DAARA NGOR',
@@ -46,7 +46,7 @@ class DaaraSeeder extends Seeder
                 'dateCreationDaara' => '2013-07-12',
                 'descriptionDaara' => 'Daara au bord du fleuve',
                 'department_id' => 3,
-                'responsable_id' => 3,
+                'responsable_id' => 1,
             ],
             [
                 'nomDaara' => 'DAARA TOUBA',
@@ -57,7 +57,7 @@ class DaaraSeeder extends Seeder
                 'dateCreationDaara' => '2016-04-25',
                 'descriptionDaara' => 'Daara dans la ville sainte de Touba',
                 'department_id' => 15,
-                'responsable_id' => 4,
+                'responsable_id' => 1,
             ],
             [
                 'nomDaara' => 'DAARA ZIGUINCHOR',
@@ -68,7 +68,7 @@ class DaaraSeeder extends Seeder
                 'dateCreationDaara' => '2017-02-11',
                 'descriptionDaara' => 'Daara de Ziguinchor',
                 'department_id' => 22,
-                'responsable_id' => 5,
+                'responsable_id' => 1,
             ],
             [
                 'nomDaara' => 'DAARA KAOLACK',
@@ -79,7 +79,7 @@ class DaaraSeeder extends Seeder
                 'dateCreationDaara' => '2018-01-20',
                 'descriptionDaara' => 'École coranique de Kaolack',
                 'department_id' => 11,
-                'responsable_id' => 4,
+                'responsable_id' => 1,
             ],
         ];
         foreach ($daaras as $daara) {
