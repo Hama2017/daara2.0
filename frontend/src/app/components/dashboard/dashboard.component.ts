@@ -66,93 +66,78 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   private loadCharts(): void {
-
-
     // Stacked Bar Chart
-    const ctxStackedBar = document.getElementById('chart-bar') as HTMLCanvasElement;
-    if (ctxStackedBar) {
-      new Chart(ctxStackedBar, {
+
+
+    // Bar Chart2
+    const ctxBar2 = document.getElementById('chartBar2') as HTMLCanvasElement;
+    if (ctxBar2) {
+      new Chart(ctxBar2, {
         type: 'bar',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','May','February','May','July','February','May','July'],
-          datasets: [{
-            label: 'Garcons',
-            data: [65, 59, 80, 81, 56, 55, 40,45,25,75,65,12,17,85],
-            backgroundColor: 'rgba(130, 207, 242, 0.3)',
-            stack: 'Stack 0'
-          }, {
-            label: 'Filles',
-            data: [28, 48, 40, 19, 86, 27, 90,45,25,75,65,12,17,85],
-            backgroundColor: 'rgba(153, 102, 255, 0.5)',
-            stack: 'Stack 0'
-          }]
+          labels: ['Dakar', 'Thies', 'Diourbel', 'Saint-Louis', 'Tambacounda', 'Kaolack', 'Kolda', 'Ziguinchor', 'Louga', 'Fatick', 'Matam', 'Kaffrine', 'Kedougou', 'Sedhiou'],
+          datasets: [
+            {
+              label: 'Garçons',
+              data: [12, 19, 3, 5, 2,6,7,8,9,10,11,12,13,14],
+              backgroundColor: 'rgba(54, 162, 235, 0.6)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Filles',
+              data: [8, 14, 7, 11, 6,12, 19, 3, 5, 2,6,7,8,9,], // Remplace par tes données pour le deuxième dataset
+              backgroundColor: 'rgba(255, 99, 132, 0.6)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+            }
+          ]
         },
         options: {
-          responsive: true,
           scales: {
-            x: {
-              stacked: true
-            },
             y: {
-              stacked: true
+              beginAtZero: true
+            }
+          },
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            tooltip: {
+              enabled: true,
             }
           }
         }
       });
     }
   }
+
   private createPieChart(): void {
-    const ctx = document.getElementById('pieChart') as HTMLCanvasElement;
-    if (ctx) {
-      new Chart(ctx, {
+    const ctxDonut = document.getElementById('chartDonut') as HTMLCanvasElement;
+    if (ctxDonut) {
+      new Chart(ctxDonut, {
         type: 'pie',
         data: {
-          labels: ['Daara Modernisé', 'Daara Traditionnel'],
+          labels: ['Moderne', 'Traditionnel'], // Remplace par tes labels
           datasets: [{
-            label: 'Nombre de Daaras',
-            data: [45, 55], // Remplacez ces valeurs par vos données réelles
+            label: 'Nombre de daara',
+            data: [15, 5], // Remplace par tes données
             backgroundColor: [
-              'rgba(54, 162, 235, 0.6)', // Couleur pour Daara Modernisé
-              'rgba(255, 99, 132, 0.6)'  // Couleur pour Daara Traditionnel
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
             ],
-            borderColor: [
-              'rgba(54, 162, 235, 1)', // Couleur de bordure pour Daara Modernisé
-              'rgba(255, 99, 132, 1)'  // Couleur de bordure pour Daara Traditionnel
-            ],
-            borderWidth: 1
+            hoverOffset: 20
           }]
         },
         options: {
           responsive: true,
           plugins: {
             legend: {
-              position:'top',
-            },
-            datalabels: {
-              display: true,
-              formatter: (value: number, context: any) => {
-                const total = context.chart.getDatasetMeta(0).total;
-                const percentage = (value / total * 100).toFixed(2) + '%';
-                return percentage;
-              },
-              color: '#fff',
-              anchor: 'end',
-              align: 'start',
-              offset: 10,
+              position: 'top',
             },
             tooltip: {
-              callbacks: {
-                label: function (context) {
-                  let label = context.label || '';
-                  if (context.parsed) {
-                    // @ts-ignore
-                    const total = context.chart.getDatasetMeta(0).total;
-                    const percentage = (context.parsed / total * 100).toFixed(2) + '%';
-                    label += `: ${percentage}`;
-                  }
-                  return label;
-                }
-              }
+              enabled: true,
             }
           }
         }

@@ -13,7 +13,7 @@ class InscriptionController extends Controller
     {
         try {
             // Utilisation de l'eager loading pour charger les relations
-            $inscriptions = Inscription::with(['apprenant', 'daara','tdNiveau'])->get();
+            $inscriptions = Inscription::with(['apprenant', 'daara', 'tdNiveau'])->get();
             return response()->json($inscriptions);
         } catch (Exception $e) {
             // Gestion des exceptions pour les erreurs inattendues
@@ -25,7 +25,7 @@ class InscriptionController extends Controller
     {
         try {
             // Utilisation de l'eager loading pour charger les relations
-            $inscriptions = Inscription::with(['apprenant', 'daara','tdNiveau'])->findOrFail($id);
+            $inscriptions = Inscription::with(['apprenant', 'daara', 'tdNiveau'])->findOrFail($id);
             return response()->json($inscriptions);
         } catch (Exception $e) {
             // Gestion des exceptions si le Inscription n'est pas trouvé
@@ -186,6 +186,4 @@ class InscriptionController extends Controller
             return response()->json(['error' => 'Erreur lors du calcul des pourcentages: ' . $e->getMessage()], 500);
         }
     }
-
-
 }

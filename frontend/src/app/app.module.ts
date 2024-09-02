@@ -15,6 +15,8 @@ import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.component";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,7 @@ import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.componen
     UserComponent,
     AddUserComponent,
     EditUserComponent,
-      ListeDaaraComponent
+      ListeDaaraComponent,
   ],
   imports: [
     BrowserModule,
