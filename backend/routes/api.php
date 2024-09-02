@@ -42,4 +42,3 @@ Route::apiResource('disciplines', DisciplineController::class);
 Route::apiResource('profils', ProfilController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('trDisciplinesEnseignants', TrDisciplineEnseignantController::class);
-Route::get('inscriptions/percentage/{departementId}', [InscriptionController::class, 'getPercentageByDepartement']);
