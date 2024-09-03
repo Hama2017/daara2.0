@@ -1,0 +1,50 @@
+<div class="row mt-9">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header border-bottom-0">
+            </div>
+            <div class="card-body">
+                <form [formGroup]="typedocForm" (ngSubmit)="insertDataTypeDocument()" >
+                    <div>
+                        <h3>Création type document</h3>
+                        <section>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Nom du document *</label>
+                                        <input type="text" class="form-control required" formControlName="Nom" name="Nom"  placeholder="Nom"  [(ngModel)]="type_document.Nom"  required>
+                                        <div *ngIf="typedocForm.get('Nom')?.invalid && typedocForm.get('Nom')?.touched" class="text-danger">
+                                            Nom est requis.
+                                        </div>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Type Document *</label>
+                                        <select formControlName="TypeDoc" class="form-control form-select" name="TypeDoc" [(ngModel)]="type_document.TypeDoc" data-bs-placeholder="Indiquer le Type">
+                                            <option value="Apprenant">Apprenant</option>
+                                            <option value="Daara">Daara</option>
+                                        </select>
+                                        <div *ngIf="typedocForm.get('TypeDoc')?.invalid && typedocForm.get('TypeDoc')?.touched" class="text-danger">
+                                            Type est requis.
+                                        </div>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Statut du document *</label>
+                                        <select formControlName="Statut" class="form-control form-select" name="Statut" [(ngModel)]="type_document.Statut" data-bs-placeholder="Indiquer le statut">
+                                            <option value="Obligatoire">Obligatoire</option>
+                                            <option value="Facultatif">Facultatif</option>
+                                        </select>
+                                        <div *ngIf="typedocForm.get('Statut')?.invalid && typedocForm.get('Statut')?.touched" class="text-danger">
+                                            Type est requis.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button [disabled]="typedocForm.invalid" class="btn btn-primary  btn-sm " type="submit">Enregistrer</button>
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

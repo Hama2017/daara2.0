@@ -1,0 +1,42 @@
+<div class="row mt-9">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header border-bottom-0">
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="updateDataTypeDocument()">
+                    <div>
+                        <h3>Modification Type Document</h3>
+                        <section>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Nom *</label>
+                                        <input type="text" class="form-control required" name="Nom"  placeholder="Nom" [(ngModel)]="type_document.Nom" required>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Type du document *</label>
+                                        <select class="form-control form-select" name="TypeDoc"  [(ngModel)]="type_document.TypeDoc" data-bs-placeholder="Indiquer le Type">
+                                            <option value="Apprenant">Apprenant</option>
+                                            <option value="Daara">Daara</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">Statut du document *</label>
+                                        <select class="form-control form-select" name="Statut"  [(ngModel)]="type_document.Statut" data-bs-placeholder="Indiquer le statut">
+                                            <option value="Obligatoire">Obligatoire</option>
+                                            <option value="Facultatif">Facultatif</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button  class="btn btn-primary btn-sm " type="submit">Appliquer</button>
+                            <a class="btn btn-sm btn-danger m-3" routerLinkActive="active" routerLink="/admin/liste-typedocument" >Annuler</a>
+                        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

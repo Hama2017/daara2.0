@@ -15,6 +15,8 @@ import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.component";
+import { AjoutTypeDocumentComponent } from "./components/ajout-type-document/ajout-type-document.component";
+
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.componen
     AddUserComponent,
     EditUserComponent,
       ListeDaaraComponent,
+    AjoutTypeDocumentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.componen
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,10 @@ import { UserComponent } from './components/user/user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.component";
+import { AjoutTypeDocumentComponent } from "./components/ajout-type-document/ajout-type-document.component";
+import {ListeTypeDocumentComponent} from "./components/liste-type-document/liste-type-document.component";
+import {EditTypeDocumentComponent} from "./components/edit-type-document/edit-type-document.component";
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,6 +28,10 @@ const routes: Routes = [
       { path: 'user', component: UserComponent },
       { path: 'add-user', component: AddUserComponent },
       { path: 'edit-user/:id', component: EditUserComponent },
+      { path: 'ajout-typedocument', component: AjoutTypeDocumentComponent },
+      { path: 'liste-typedocument', component: ListeTypeDocumentComponent },
+      { path: 'edit-typedocument/:id', component: EditTypeDocumentComponent },
+
     ]},
 ];
 
