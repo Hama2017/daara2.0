@@ -17,7 +17,21 @@
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
             <!-- sidebar-toggle-->
             <a class="logo-horizontal " href="index.html">
-              <img src="assets/images/brand/logo-smartschool.png" class="header-brand-img desktop-logo" alt="logo">
+              <img src="assets/images/brand/logo-smartschool.png" class="header-brand-img desktop-logo img-fluid" alt="logo">
+              <head>
+                 <style>
+                .header-brand-img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .header-brand-img {
+        max-width: 80px;
+    }
+}
+              </style>
+              </head>
               <img src="assets/images/brand/logo-smartschool-1.png" class="header-brand-img light-logo1"
                    alt="logo">
             </a>
