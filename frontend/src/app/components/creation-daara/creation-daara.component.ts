@@ -110,7 +110,7 @@ export class CreationDaaraComponent implements AfterViewInit{
         const nomDoc = typeDocData.Nom;
         // @ts-ignore
         typeDocList.innerHTML+=`<div class="mb-3">
-                                     <label for="" class="form-label">${nomDoc} (obligatoire) </label>
+                                     <label for="" class="form-label">${nomDoc} (facultatif) </label>
                                      <input type="file" class="form-control" id="${id}" name="" required>
                                   </div>`
       });
