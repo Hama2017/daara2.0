@@ -13,7 +13,7 @@ class DaaraController extends Controller
     {
         try {
             // Utilisation de l'eager loading pour charger les relations
-            $daaras = Daara::with(['departement.region', 'responsable'])->get();
+            $daaras = Daara::with(['departement.region', 'responsable', 'ief'])->get();
             return response()->json($daaras);
         } catch (Exception $e) {
             // Gestion des exceptions pour les erreurs inattendues
@@ -25,7 +25,7 @@ class DaaraController extends Controller
     {
         try {
             // Utilisation de l'eager loading pour charger les relations
-            $daara = Daara::with(['departement.region', 'responsable'])->findOrFail($id);
+            $daara = Daara::with(['departement.region', 'responsable', 'ief'])->findOrFail($id);
             return response()->json($daara);
         } catch (Exception $e) {
             // Gestion des exceptions si le Daara n'est pas trouvé
@@ -47,6 +47,7 @@ class DaaraController extends Controller
                 'descriptionDaara' => 'nullable|string',
                 'department_id' => 'required|exists:departements,id',
                 'responsable_id' => 'required|exists:users,id',
+                'ief_id' => 'nullable|exists:iefs,id',  
             ]);
 
             // Création d'un nouveau Daara
@@ -82,6 +83,7 @@ class DaaraController extends Controller
                 'descriptionDaara' => 'nullable|string',
                 'department_id' => 'required|exists:departements,id',
                 'responsable_id' => 'required|exists:users,id',
+                'ief_id' => 'nullable|exists:iefs,id',  // Ajout de la validation pour ief_id
             ]);
 
             // Mise à jour du Daara

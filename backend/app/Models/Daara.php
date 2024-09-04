@@ -39,4 +39,11 @@ class Daara extends Model
    {
        return $this->belongsToMany(DocDaara::class, 'tr_doc_daaras', 'daara_id', 'doc_daara_id');
    }
+   // App/Models/Daara.php
+
+public function ief()
+{
+    return $this->belongsTo(IEF::class);
+}
+
 }
