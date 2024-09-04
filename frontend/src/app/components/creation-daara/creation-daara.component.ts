@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import {User} from "../../models/user";
 import {DataUserService} from "../../services/data-user.service";
 import {Router} from "@angular/router";
+import {DataTypeDocumentService} from "../../services/data-type-document.service";
+import {TypeDocument} from "../../models/type-document";
 @Component({
   selector: 'app-creation-daara',
   templateUrl: './creation-daara.component.html',
@@ -14,16 +16,21 @@ import {Router} from "@angular/router";
 })
 export class CreationDaaraComponent implements AfterViewInit{
   departementsDataResults: Departement[] = [];
+  typeDocDataResults:TypeDocument[] =[];
   responsableDataResults:User[]=[];
+  selectedResponsable:User | undefined;
   daara:Daara=new Daara();
   constructor(private departementService: DataDepartementService,
               private daaraService:DataDaarasService,
               private userSevice:DataUserService,
-              private router: Router) { }
+              private router: Router,
+              private typedocService:DataTypeDocumentService) { }
   ngAfterViewInit(): void {
     this.initializeWizard();
     this.getDepartementdata();
     this.getResponsabledata();
+    this.getTypeDocDataObligatoire();
+    this.getTypeDocDataFacultatifs();
   }
   getDepartementdata(){
     this.departementService.getDepartements().subscribe(res => {
@@ -67,6 +74,50 @@ export class CreationDaaraComponent implements AfterViewInit{
       console.log('error ', error);
     });
   }
+  getTypeDocDataObligatoire(){
+    this.typedocService.getDataTypeDocument().subscribe(res => {
+      // @ts-ignore
+      this.typeDocDataResults.push(...res);
+      //Ne prend que les users dont le profil est reponsable
+      this.typeDocDataResults=this.typeDocDataResults.filter(res => res.Statut==="Obligatoire").filter(res => res.TypeDoc==="Daara");
+      // @ts-ignore
+      let  typeDocList = document.getElementById('docObligatoire')
+      // @ts-ignore
+      this.typeDocDataResults.forEach((typeDocData: TypeDocument) => {
+        const id = typeDocData.id;
+        const nomDoc = typeDocData.Nom;
+        // @ts-ignore
+        typeDocList.innerHTML+=`<div class="mb-3">
+                                     <label for="" class="form-label">${nomDoc} (obligatoire) </label>
+                                     <input type="file" class="form-control" id="${id}" name="" required>
+                                  </div>`
+      });
+    }, error => {
+      console.log('error ', error);
+    });
+  }
+  getTypeDocDataFacultatifs(){
+    this.typedocService.getDataTypeDocument().subscribe(res => {
+      // @ts-ignore
+      this.typeDocDataResults.push(...res);
+      //Ne prend que les users dont le profil est reponsable
+      this.typeDocDataResults=this.typeDocDataResults.filter(res => res.Statut==="Facultatif").filter(res => res.TypeDoc==="Daara");
+      // @ts-ignore
+      let  typeDocList = document.getElementById('docFacultatis')
+      // @ts-ignore
+      this.typeDocDataResults.forEach((typeDocData: TypeDocument) => {
+        const id = typeDocData.id;
+        const nomDoc = typeDocData.Nom;
+        // @ts-ignore
+        typeDocList.innerHTML+=`<div class="mb-3">
+                                     <label for="" class="form-label">${nomDoc} (obligatoire) </label>
+                                     <input type="file" class="form-control" id="${id}" name="" required>
+                                  </div>`
+      });
+    }, error => {
+      console.log('error ', error);
+    });
+  }
 
   private initializeWizard(): void {
     ($('#wizard1') as any).steps({
@@ -98,8 +149,11 @@ export class CreationDaaraComponent implements AfterViewInit{
           case 1:
             const selectedValue = $("select[name='responsableList']").val();
             this.daara.responsable_id = parseInt(selectedValue as string, 10);
+            this.fillRecapSection();
             break;
           case 2:
+            break;
+          case 3:
             break;
           case 4:
             break;
@@ -112,7 +166,6 @@ export class CreationDaaraComponent implements AfterViewInit{
       },
       // Ajout de la méthode onFinished ici
       onFinished: (event: any, currentIndex: any) => {
-        console.log('ok');
         console.log(this.daara); // Log du daara pour vérifier les données
         this.daaraService.insertDataDaara(this.daara).subscribe(res => {
           Swal.fire({
@@ -150,6 +203,36 @@ export class CreationDaaraComponent implements AfterViewInit{
         break;
       case 1:
         break;
+      case 2:
+        // Validation des documents obligatoires
+        const fileInputs = document.querySelectorAll('#docObligatoire input[type="file"]');
+
+        fileInputs.forEach(input => {
+          // @ts-ignore
+          if (!input.value) {
+            isValid = false;
+            // @ts-ignore
+            const label = input.previousElementSibling.textContent;
+            messages.push(`Le document "${label}" est obligatoire.`);
+            input.classList.add('is-invalid');
+          } else {
+            // Vérification de l'extension du fichier
+            // @ts-ignore
+            const file = input.files[0];
+            const fileName = file.name;
+            const allowedExtensions = /(\.pdf|\.doc|\.docx)$/i;
+            if (!allowedExtensions.exec(fileName)) {
+              isValid = false;
+              messages.push(`Le document "${fileName}" doit être au format PDF ou Word.`);
+              input.classList.add('is-invalid');
+            } else {
+              input.classList.remove('is-invalid');
+            }
+          }
+        });
+        break;
+
+
     }
     // Ajoutez d'autres validations pour les étapes suivantes si nécessaire
     if (messages.length > 0) {
@@ -163,5 +246,25 @@ export class CreationDaaraComponent implements AfterViewInit{
     }
 
     return isValid;
+  }
+
+selectedDepartementRegion:Departement |undefined;
+  private fillRecapSection():void{
+  console.log('ok');
+  $('#recapNom').text(`Nom daara: ${this.daara.nomDaara}`);
+  $('#recapAdresse').text(`Adresse: ${this.daara.adresseDaara}`);
+  $('#recapDescription').text(`Description: ${this.daara.descriptionDaara}`);
+  $('#recapCoordonnees').text(`Coordonnees: ${this.daara.coordonneesDaara}`);
+  $('#recapDateCreation').text(`Date de creation: ${this.daara.dateCreationDaara}`);
+  $('#recapTelephone').text(`Telephone: ${this.daara.telephoneDaara}`);
+  const responsableDaara = this.responsableDataResults.find(res => res.id === parseInt($("select[name='responsableList']").val() as string));
+  this.selectedResponsable = responsableDaara;
+  $('#recapNomResponsable').text(`Nom respsonsable: ${responsableDaara?.nomUser}`);
+  $('#recapPrenomResponsable').text(`Prenom repsonsable: ${responsableDaara?.prenomUser}`);
+  const departementRegion = this.departementsDataResults.find(res => res.id === parseInt($("select[name='departmentList']").val() as string));
+  this.selectedDepartementRegion = departementRegion;
+  $('#recapDepartement').text(`Departement/Region: ${departementRegion?.nomDepartement}-${departementRegion?.region.nomRegion}`);
+
+
   }
 }

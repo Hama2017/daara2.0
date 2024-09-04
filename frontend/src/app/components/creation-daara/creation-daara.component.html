@@ -65,11 +65,66 @@
                         </section>
                         <h3>Documents</h3>
                         <section>
-                            <p>Les documents a soummettre pour la creation d'un daara</p>
+                            <div class="row">
+                                <!-- Première partie : Documents obligatoires -->
+                                <div class="col-md-6">
+                                    <div class="card mb-4">
+                                        <div class="card-header">
+                                            <h3 class="h6 fw-bold">Documents obligatoires</h3>
+                                        </div>
+                                        <div class="card-body" id="docObligatoire">
+
+                                            <!-- Ajoutez d'autres champs de fichiers obligatoires ici -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Deuxième partie : Documents facultatifs -->
+                                <div class="col-md-6">
+                                    <div class="card mb-4">
+                                        <div class="card-header">
+                                            <h3 class="h6 fw-bold">Documents facultatifs</h3>
+                                        </div>
+                                        <div class="card-body" id="docFacultatis">
+                                            <!-- Ajoutez d'autres champs de fichiers facultatifs ici -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                         <h3>Recapitulatif</h3>
                         <section>
-                            <p>Recap des saisies</p>
+                            <div id="recapSection" class="row">
+                                <div class="col">
+                                    <div class="recap-container">
+                                        <h5 class="fw-bold" >Informations Daara</h5>
+                                        <p id="recapNom"></p>
+                                        <p id="recapAdresse"></p>
+                                        <p id="recapEmail"></p>
+                                        <p id="recapDescription"></p>
+                                        <p id="recapCoordonnees"></p>
+                                        <p id="recapDepartement"></p>
+                                        <p id="recapDateCreation"></p>
+                                        <p id="recapTelephone"></p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="recap-container">
+
+                                        <h5 class="fw-bold" >Informations Responsable</h5>
+                                        <p id="recapPrenomResponsable"></p>
+                                        <p id="recapNomResponsable"></p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="recap-container">
+                                        <h5 class="fw-bold" >Documents</h5>
+                                        <div id="recapDocuments"></div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </section>
                     </div>
                 </form>
