@@ -80,15 +80,15 @@ export class DashboardComponent implements AfterViewInit {
             {
               label: 'Garçons',
               data: [12, 19, 3, 5, 2,6,7,8,9,10,11,12,13,14],
-              backgroundColor: 'rgba(54, 162, 235, 0.6)',
-              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: '#17a2b8',
+              borderColor: '#17a2b8',
               borderWidth: 1
             },
             {
               label: 'Filles',
               data: [8, 14, 7, 11, 6,12, 19, 3, 5, 2,6,7,8,9,], // Remplace par tes données pour le deuxième dataset
-              backgroundColor: 'rgba(255, 99, 132, 0.6)',
-              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: '#09ad95',
+              borderColor: '#09ad95',
               borderWidth: 1
             }
           ]
@@ -124,8 +124,8 @@ export class DashboardComponent implements AfterViewInit {
             label: 'Nombre de daara',
             data: [15, 5], // Remplace par tes données
             backgroundColor: [
-              'rgba(255, 99, 132, 0.6)',
-              'rgba(54, 162, 235, 0.6)',
+              '#09ad95',
+              '#17a2b8',
             ],
             hoverOffset: 20
           }]

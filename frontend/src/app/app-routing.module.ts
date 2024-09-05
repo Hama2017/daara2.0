@@ -13,7 +13,9 @@ import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.componen
 import { AjoutTypeDocumentComponent } from "./components/ajout-type-document/ajout-type-document.component";
 import {ListeTypeDocumentComponent} from "./components/liste-type-document/liste-type-document.component";
 import {EditTypeDocumentComponent} from "./components/edit-type-document/edit-type-document.component";
-
+import { EmailComposeComponent } from './components/email/email-compose/email-compose.component';
+import { EmailInboxComponent } from './components/email/email-inbox/email-inbox.component';
+import { EmailReadComponent } from './components/email/email-read/email-read.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -31,6 +33,9 @@ const routes: Routes = [
       { path: 'ajout-typedocument', component: AjoutTypeDocumentComponent },
       { path: 'liste-typedocument', component: ListeTypeDocumentComponent },
       { path: 'edit-typedocument/:id', component: EditTypeDocumentComponent },
+      { path: 'inbox', component: EmailInboxComponent },
+      { path: 'compose', component: EmailComposeComponent },
+      { path: 'read', component: EmailReadComponent },
 
     ]},
 ];

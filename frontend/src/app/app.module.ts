@@ -16,6 +16,10 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import {ListeDaaraComponent} from "./components/liste-daara/liste-daara.component";
 import { AjoutTypeDocumentComponent } from "./components/ajout-type-document/ajout-type-document.component";
+import { EmailInboxComponent } from './components/email/email-inbox/email-inbox.component';
+import { EmailComposeComponent } from './components/email/email-compose/email-compose.component';
+import { EmailReadComponent } from './components/email/email-read/email-read.component';
+
 
 
 
@@ -33,6 +37,9 @@ import { AjoutTypeDocumentComponent } from "./components/ajout-type-document/ajo
     EditUserComponent,
       ListeDaaraComponent,
     AjoutTypeDocumentComponent,
+    EmailInboxComponent,
+    EmailComposeComponent,
+    EmailReadComponent,
 
   ],
   imports: [

@@ -43,12 +43,12 @@ export class ListeDaaraComponent implements OnInit {
             label: 'Nombre',
             data: [55, 45], // Remplacez ces valeurs par vos données réelles
             backgroundColor: [
-              'rgba(54, 162, 235, 0.6)', // Couleur pour garcon
-              'rgba(255, 99, 132, 0.6)'  // Couleur pour fille
+              '#17a2b8', // Couleur pour garcon
+              '#09ad95'  // Couleur pour fille
             ],
             borderColor: [
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 99, 132, 1)'
+              '#17a2b8',
+              '#09ad95'
             ],
             borderWidth: 1
           }]
@@ -102,14 +102,14 @@ export class ListeDaaraComponent implements OnInit {
             label: 'Nombre',
             data: [30,32,29], // Remplacez ces valeurs par vos données réelles
             backgroundColor: [
-              'rgba(120,235,54,0.6)', // Couleur pour garcon
-              'rgb(232,46,68)'  ,// Couleur pour fille
-              'rgb(118,85,250)'  ,// Couleur pour fille
+              '#09ad95', // Couleur pour garcon
+              '#04BBFF'  ,// Couleur pour fille
+              '#4F772D'  ,// Couleur pour fille
             ],
             borderColor: [
-              'rgba(120,235,54,0.6)', // Couleur pour garcon
-              'rgb(232,46,68)'  ,// Couleur pour fille
-              'rgb(118,85,250)'
+              '#09ad95', // Couleur pour garcon
+              '#04BBFF'  ,// Couleur pour fille
+              '#4F772D'
             ],
             borderWidth: 1
           }]

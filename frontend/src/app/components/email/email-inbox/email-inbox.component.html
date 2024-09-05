@@ -1,0 +1,383 @@
+<div class="page-header">
+    <h1 class="page-title">Dashboard 01</h1>
+    <div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard 01</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-3">
+        <div id="scroll-stickybar" class="w-100">
+            <div class="card">
+                <div class="list-group list-group-transparent mb-0 mail-inbox pb-3">
+                    <div class="mt-4 mx-4 mb-4 text-center">
+                        <a routerLink="/admin/compose" class="btn btn-primary btn-lg d-grid">Nouveau</a>
+                    </div>
+                    <a routerLink="/admin/inbox" class="list-group-item d-flex align-items-center active mx-4">
+                        <span class="icons"><i class="ri-mail-line"></i></span> Reception<span class="ms-auto badge bg-secondary bradius">14</span>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item d-flex align-items-center mx-4">
+                        <span class="icons"><i class="ri-mail-open-line"></i></span> Brouillons
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item d-flex align-items-center mx-4">
+                        <span class="icons"><i class="ri-star-line"></i></span> Etoilés <span class="ms-auto badge bg-success bradius">03</span>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item d-flex align-items-center mx-4">
+                        <span class="icons"><i class="ri-price-tag-3-line"></i></span> Tags
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item d-flex align-items-center mx-4">
+                        <span class="icons"><i class="ri-mail-send-line"></i></span> Envoyés
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item d-flex align-items-center mx-4">
+                        <span class="icons"><i class="ri-delete-bin-line"></i></span> Supprimés
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-9">
+        <div class="card">
+            <div class="card-body p-6">
+                <div class="inbox-body">
+                    <div class="mail-option">
+                        <div class="chk-all">
+                            <div class="btn-group">
+                                <a data-bs-toggle="dropdown" href="javascript:void(0)" class="btn mini all" aria-expanded="false">
+                                    All
+                                    <i class="fa fa-angle-down "></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-start">
+                                    <li><a href="javascript:void(0)"> None</a></li>
+                                    <li><a href="javascript:void(0)"> Read</a></li>
+                                    <li><a href="javascript:void(0)"> Unread</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <a href="javascript:void(0)" class="btn mini tooltips">
+                                <i class=" fa fa-refresh"></i>
+                            </a>
+                        </div>
+                        <div class="btn-group hidden-phone">
+                            <a data-bs-toggle="dropdown" href="javascript:void(0)" class="btn mini blue" aria-expanded="false">
+                                More
+                                <i class="fa fa-angle-down "></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)"><i class="fa fa-pencil me-2"></i> Mark as Read</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-ban me-2"></i> Spam</a></li>
+                                <li class="divider"></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-trash-o me-2"></i> Delete</a></li>
+                            </ul>
+                        </div>
+                        <ul class="unstyled inbox-pagination">
+                            <li><span class="fs-13">1-50 of 234</span></li>
+
+                            <li>
+                                <a class="np-btn" href="javascript:void(0)"><i class="fa fa-angle-right pagination-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-inbox table-hover text-nowrap mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Tim Reid, S P N</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Boost Your Website Traffic</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">April 01</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Freelancer.com</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Stop wasting your visitors</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">May 23</td>
+                            </tr>
+                            <tr class="unread">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark text-danger"></i></td>
+                                <td class="view-message  dont-show clickable-row" [routerLink]="['/admin/read']">PHPClass</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Added a new class: Login Class Fast Site</td>
+                                <td class="view-message  text-end clickable-row" [routerLink]="['/admin/read']">9:27 AM</td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Facebook</td>
+                                <td class="view-message view-message clickable-row" [routerLink]="['/admin/read']">Somebody requested a new password </td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">June 13</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Skype</td>
+                                <td class="view-message view-message clickable-row" [routerLink]="['/admin/read']">Password successfully changed</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 24</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Google+</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">alireza, do you know</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 09</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">WOW Slider </td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">New WOW Slider v7.8 - 67% off</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 14</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">LinkedIn Pulse</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">The One Sign Your Co-Worker Will Stab</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">Feb 19</td>
+                            </tr>
+                            <tr class="unread">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Google Webmaster </td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Improve the search presence of WebSite</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 15</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">JW Player</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Last Chance: Upgrade to Pro for </td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 15</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Drupal Community</td>
+                                <td class="view-message view-message clickable-row" [routerLink]="['/admin/read']">Welcome to the Drupal Community</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 04</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Zoosk </td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">7 new singles we think you'll like</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">May 14</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark text-danger"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">LinkedIn </td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Alireza: Nokia Networks, System Group and </td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">February 25</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Facebook</td>
+                                <td class="view-message view-message clickable-row" [routerLink]="['/admin/read']">Your account was recently logged into</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">March 14</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Twitter</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Your Twitter password has been changed</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">April 07</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">InternetSeer</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Performance Report</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">July 14</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark text-danger"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Bertina </td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">IMPORTANT: Don't lose your domains!</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">June 16</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark text-danger"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Laura Gaffin, S P N </td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Your Website On Google (Higher Rankings Are Better)</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">August 10</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Facebook</td>
+                                <td class="view-message view-message clickable-row" [routerLink]="['/admin/read']">Alireza Zare Login faild</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">feb 14</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star inbox-started"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">AddMe.com</td>
+                                <td class="view-message clickable-row" [routerLink]="['/admin/read']">Submit Your Website to the AddMe Business Directory</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">August 10</td>
+                            </tr>
+                            <tr class="">
+                                <td class="inbox-small-cells">
+                                    <label class="custom-control custom-checkbox mb-0 ms-3">
+                                        <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
+                                        <span class="custom-control-label"></span>
+                                    </label>
+                                </td>
+                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                <td class="inbox-small-cells"><i class="fa fa-bookmark"></i></td>
+                                <td class="view-message dont-show fw-semibold clickable-row" [routerLink]="['/admin/read']">Terri Rexer, S P N</td>
+                                <td class="view-message view-message clickable-row" [routerLink]="['/admin/read']">Forget Google AdWords: Un-Limited Clicks fo</td>
+                                <td class="view-message text-end fw-semibold clickable-row" [routerLink]="['/admin/read']">April 14</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="pagination mb-4">
+            <li class="page-item page-prev disabled">
+                <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+            <li class="page-item page-next">
+                <a class="page-link" href="javascript:void(0)">Next</a>
+            </li>
+        </ul>
+    </div>
+</div>
