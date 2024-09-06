@@ -47,7 +47,7 @@ class DaaraController extends Controller
                 'descriptionDaara' => 'nullable|string',
                 'department_id' => 'required|exists:departements,id',
                 'responsable_id' => 'required|exists:users,id',
-                'ief_id' => 'nullable|exists:iefs,id',  
+                'ief_id' => 'nullable',
             ]);
 
             // Création d'un nouveau Daara

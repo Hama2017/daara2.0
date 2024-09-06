@@ -9,7 +9,7 @@ export class Daara {
     descriptionDaara!: string;
     department_id!: number;
     responsable_id!: number;
-
+    ief_id!: number;
     // Nouveaux attributs pour stocker les informations complètes
     departement!: {
         id: number,
@@ -46,6 +46,7 @@ export class Daara {
         descriptionDaara?: string,
         department_id?: number,
         responsable_id?: number,
+        ief_id?: number,
         emailDaara?: string,
         departement?: any,
         responsable?: any,
@@ -57,6 +58,7 @@ export class Daara {
         this.telephoneDaara = data?.telephoneDaara || '';
         this.descriptionDaara = data?.descriptionDaara || '';
         this.department_id = data?.department_id || 0;
+        this.ief_id = data?.ief_id || 0;
         this.responsable_id = data?.responsable_id || 0;
         this.emailDaara = data?.emailDaara || '';
         this.departement = data?.departement || {};

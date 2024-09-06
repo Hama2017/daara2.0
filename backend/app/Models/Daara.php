@@ -11,15 +11,16 @@ class Daara extends Model
 
 
     protected $fillable = [
-        'nomDaara', 
-        'adresseDaara', 
-        'coordonneesDaara', 
-        'telephoneDaara', 
-        'emailDaara', 
-        'dateCreationDaara', 
-        'descriptionDaara', 
-        'department_id', 
-        'responsable_id'
+        'nomDaara',
+        'adresseDaara',
+        'coordonneesDaara',
+        'telephoneDaara',
+        'emailDaara',
+        'dateCreationDaara',
+        'descriptionDaara',
+        'department_id',
+        'responsable_id',
+        'ief_id'
     ];
 
    // Relationship with Departement

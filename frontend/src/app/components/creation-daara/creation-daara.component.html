@@ -24,7 +24,7 @@
                                         <input type="text" class="form-control required" name="adresseDaara" placeholder="Adresse du daara" required>
                                     </div>
                                     <div class="control-group form-group">
-                                        <label class="form-label">Coordonness geographique *</label>
+                                        <label class="form-label">Coordonnees geographique *</label>
                                         <input type="text" class="form-control required" name="coordonneesDaara" placeholder="Renseigner les coordonnees du daara sous le format [latitude,longitude] " required>
                                     </div>
                                     <div class="control-group form-group">
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="control-group form-group">
                                         <label class="form-label">Description </label>
-                                        <input type="text" class="form-control " maxlength="9" name="descriptionDaara"  placeholder="Breve description ou remarques concernant le daara">
+                                        <input type="text" class="form-control " name="descriptionDaara"  placeholder="Breve description ou remarques concernant le daara">
                                     </div>
                                     <div class="control-group form-group">
                                         <label class="form-label">Departement *</label>
@@ -51,7 +51,14 @@
 
                                         </select>
                                     </div>
+                                    <div class="control-group form-group">
+                                        <label class="form-label">IA/IEF *</label>
+                                        <select class="form-control form-select" name="iaList" id="iaList">
+                                            <option value="" disabled selected>Sélectionner l'IEF</option>
+                                        </select>
+                                    </div>
                                 </div>
+
                             </div>
                         </section>
                         <h3>Responsable</h3>
@@ -103,6 +110,7 @@
                                         <p id="recapEmail"></p>
                                         <p id="recapDescription"></p>
                                         <p id="recapCoordonnees"></p>
+                                        <p id="recapIef"></p>
                                         <p id="recapDepartement"></p>
                                         <p id="recapDateCreation"></p>
                                         <p id="recapTelephone"></p>
@@ -115,12 +123,6 @@
                                         <h5 class="fw-bold" >Informations Responsable</h5>
                                         <p id="recapPrenomResponsable"></p>
                                         <p id="recapNomResponsable"></p>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="recap-container">
-                                        <h5 class="fw-bold" >Documents</h5>
-                                        <div id="recapDocuments"></div>
                                     </div>
                                 </div>
 
