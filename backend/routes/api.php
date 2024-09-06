@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ApprenantController;
 use App\Http\Controllers\DocApprenantController;
+use App\Http\Controllers\IAController;
+use App\Http\Controllers\IEFController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\TdNiveauController;
@@ -44,3 +46,5 @@ Route::apiResource('profils', ProfilController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('trDisciplinesEnseignants', TrDisciplineEnseignantController::class);
 Route::apiresource('typedocuments',TypeDocumentController::class);
+Route::apiresource('ias',IAController::class);
+Route::apiresource('iefs',IEFController::class);
