@@ -36,6 +36,11 @@ export class Daara {
         created_at: string,
         updated_at: string
     };
+    ief!:{
+        id: number;
+        nom: string;
+        ia_id: number;
+    }
 
     constructor(data?: {
         nomDaara?: string,
@@ -50,6 +55,7 @@ export class Daara {
         emailDaara?: string,
         departement?: any,
         responsable?: any,
+        ief?: any,
     }) {
         this.nomDaara = data?.nomDaara || '';
         this.adresseDaara = data?.adresseDaara || '';
@@ -63,6 +69,7 @@ export class Daara {
         this.emailDaara = data?.emailDaara || '';
         this.departement = data?.departement || {};
         this.responsable = data?.responsable || {};
+        this.ief = data?.ief || {};
     }
     // Méthode pour obtenir les coordonnées en tant que tableau de nombres [latitude, longitude]
     getCoordonnees(): [number, number] {
