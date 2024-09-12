@@ -104,12 +104,12 @@ export class ListeDaaraComponent implements OnInit {
             backgroundColor: [
               '#09ad95', // Couleur pour garcon
               '#04BBFF'  ,// Couleur pour fille
-              '#4F772D'  ,// Couleur pour fille
+              '#17a2b8'  ,// Couleur pour fille
             ],
             borderColor: [
               '#09ad95', // Couleur pour garcon
               '#04BBFF'  ,// Couleur pour fille
-              '#4F772D'
+              '#17a2b8'
             ],
             borderWidth: 1
           }]
