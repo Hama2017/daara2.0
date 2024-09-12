@@ -9,6 +9,9 @@ import {DataUserService} from "../../services/data-user.service";
 import {Router} from "@angular/router";
 import {DataTypeDocumentService} from "../../services/data-type-document.service";
 import {TypeDocument} from "../../models/type-document";
+import {DataIasService} from "../../services/data-ias.service";
+import {IA} from "../../models/ia";
+import {IEF} from "../../models/ief";
 @Component({
   selector: 'app-creation-daara',
   templateUrl: './creation-daara.component.html',
@@ -20,17 +23,20 @@ export class CreationDaaraComponent implements AfterViewInit{
   responsableDataResults:User[]=[];
   selectedResponsable:User | undefined;
   daara:Daara=new Daara();
+  iasDataResults: IA[] = [];
   constructor(private departementService: DataDepartementService,
               private daaraService:DataDaarasService,
               private userSevice:DataUserService,
               private router: Router,
-              private typedocService:DataTypeDocumentService) { }
+              private typedocService:DataTypeDocumentService,
+              private iaService : DataIasService) { }
   ngAfterViewInit(): void {
     this.initializeWizard();
     this.getDepartementdata();
     this.getResponsabledata();
     this.getTypeDocDataObligatoire();
     this.getTypeDocDataFacultatifs();
+    this.getIAdata();
   }
   getDepartementdata(){
     this.departementService.getDepartements().subscribe(res => {
@@ -72,6 +78,44 @@ export class CreationDaaraComponent implements AfterViewInit{
       });
     }, error => {
       console.log('error ', error);
+    });
+  }
+  getIAdata(): void {
+    this.iaService.getIAs().subscribe(res => {
+      // Stocker les résultats dans un tableau
+      // @ts-ignore
+      this.iasDataResults.push(...res);
+
+      // Sélectionner l'élément HTML
+      // @ts-ignore
+      let iaList = document.getElementById('iaList');
+
+      // Réinitialiser le contenu de la liste des options
+      // @ts-ignore
+      iaList.innerHTML = `<option value="" disabled selected>Sélectionner l'IA</option>`;
+
+      // Boucler à travers les résultats pour ajouter chaque IA et ses IEFs
+      this.iasDataResults.forEach((iaData: IA) => {
+        const iaId = iaData.id;
+        const iaNom = iaData.nom;
+
+        // Ajouter l'IA à la liste
+        // @ts-ignore
+        iaList.innerHTML += `<option class="fw-bold" disabled value="${iaId}">${iaNom}</option>`;
+
+        // Boucler à travers les IEFs de chaque IA et ajouter à la liste
+        // @ts-ignore
+        iaData.ief.forEach((ief) => {
+          const iefId = ief.id;
+          const iefNom = ief.nom;
+
+          // Ajouter les IEFs sous chaque IA
+          // @ts-ignore
+          iaList.innerHTML += `<option value="${iefId}">&nbsp;&nbsp;&nbsp;${iefNom}</option>`;
+        });
+      });
+    }, error => {
+      console.log('Erreur lors de la récupération des IA :', error);
     });
   }
   getTypeDocDataObligatoire(){
@@ -145,6 +189,7 @@ export class CreationDaaraComponent implements AfterViewInit{
             this.daara.telephoneDaara = ($("input[name='telephoneDaara']").val() as string).trim().toString();
             this.daara.descriptionDaara = ($("input[name='descriptionDaara']").val() as string).trim().toString();
             this.daara.department_id = ($("select[name='departmentList']").val() as any); // Changement input en select
+            this.daara.ief_id = ($("select[name='iaList']").val() as any);
             break;
           case 1:
             const selectedValue = $("select[name='responsableList']").val();
@@ -248,7 +293,7 @@ export class CreationDaaraComponent implements AfterViewInit{
     return isValid;
   }
 
-selectedDepartementRegion:Departement |undefined;
+  selectedDepartementRegion:Departement |undefined;
   private fillRecapSection():void{
   console.log('ok');
   $('#recapNom').text(`Nom daara: ${this.daara.nomDaara}`);
@@ -264,6 +309,17 @@ selectedDepartementRegion:Departement |undefined;
   const departementRegion = this.departementsDataResults.find(res => res.id === parseInt($("select[name='departmentList']").val() as string));
   this.selectedDepartementRegion = departementRegion;
   $('#recapDepartement').text(`Departement/Region: ${departementRegion?.nomDepartement}-${departementRegion?.region.nomRegion}`);
+    const selectedIefId = parseInt($("select[name='iaList']").val() as string);
+    // @ts-ignore
+    const ia=this.iasDataResults.find(ia =>ia.ief.some((ief: { id: number; }) =>ief.id === selectedIefId));
+    // @ts-ignore
+    const selectedIef=ia?.ief.find((ief: { id: number; }) =>ief.id === selectedIefId);
+    if(selectedIef){
+      $('#recapIef').text(`IEF : ${selectedIef.nom} - ${ia?.nom}`);
+    } else {
+      $('#recapIef').text('Aucun IEF trouvé');
+    }
+
 
 
   }

@@ -37,6 +37,7 @@
                                 <th class="text-center">Nom</th>
                                 <th>Adresse</th>
                                 <th>Departement/Region</th>
+                                <th>IEF</th>
                                 <th>Nombre de talibes</th>
                                 <th>Responsable general</th>
                                 <th class="text-center">Actions</th>
@@ -49,6 +50,7 @@
                                 <td class="text-nowrap align-middle"><span>{{ daara.adresseDaara }}</span></td>
                                 <td class="text-nowrap align-middle"><span>{{ daara.departement.nomDepartement }}
                                     /{{ daara.departement.region.nomRegion }}</span></td>
+                                <td class="text-nowrap align-middle"><span>{{ daara.ief.nom }}</span></td>
                                 <td class="text-nowrap align-middle"><span> - </span></td>
                                 <td class="text-nowrap align-middle">
                                     <span>{{ daara.responsable.prenomUser }}  {{ daara.responsable.nomUser }}</span>
@@ -78,8 +80,7 @@
                                                 </div>
                                                 <div class="col-sm">
                                                     <p>
-                                                        <strong style="font-size: 20px;" >Département<br></strong> {{ selectedDaara?.departement?.nomDepartement }}
-                                                        / {{ selectedDaara?.departement?.region?.nomRegion }}</p>
+                                                        <strong style="font-size: 20px;" >IEF<br></strong> {{ selectedDaara?.ief?.nom }}</p>
                                                 </div>
                                                 <div class="col-sm">
                                                     <p>

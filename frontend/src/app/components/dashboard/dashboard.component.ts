@@ -46,7 +46,7 @@ export class DashboardComponent implements AfterViewInit {
 
         L.marker([latitude, longitude])
             .addTo(this.map)
-            .bindPopup(`<b style="font-weight: bold">${daara.nomDaara}</b><br>${daara.adresseDaara}<br>${daara.telephoneDaara}<br>${daara.emailDaara}`)
+            .bindPopup(`<b style="font-weight: bold">${daara.nomDaara}</b><br>${daara.adresseDaara}<br>${daara.ief.nom}`)
             .openPopup();
       });
     });
