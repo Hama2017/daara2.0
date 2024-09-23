@@ -6,6 +6,8 @@ import { Daara } from '../../models/daara';
 import { Chart, registerables } from 'chart.js';
 
 import 'chartjs-plugin-datalabels';
+import { IA } from 'src/app/models/ia';
+import { DataIasService } from 'src/app/services/data-ias.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,9 +16,15 @@ import 'chartjs-plugin-datalabels';
 })
 export class DashboardComponent implements AfterViewInit {
   private map!: L.Map;
+  daaras: Daara[] = []; // Tous les Daaras
+  filteredDaaras: Daara[] = []; // Daaras filtrés par IA
+  ias: IA[] = []; // Liste des IA
 
-  constructor(private http: HttpClient, private daaraService: DataDaarasService) {
-    // Enregistrez tous les modules nécessaires pour Chart.js
+  constructor(
+      private http: HttpClient,
+      private daaraService: DataDaarasService,
+      private iaService: DataIasService
+  ) {
     Chart.register(...registerables);
   }
 
@@ -24,32 +32,46 @@ export class DashboardComponent implements AfterViewInit {
     this.initMap();
     this.loadCharts();
     this.createPieChart();
-
+    this.loadIA(); // Charger les IA
   }
 
+  // Charger les IA depuis le service
+  loadIA(): void {
+    this.iaService.getIAs().subscribe((ias: IA[]) => {
+      this.ias = ias;
+    });
+  }
+
+  // Filtrer les Daaras par IA lors de la sélection
+  onIaChange(event: any): void {
+    const selectedIaId = event.target.value;
+
+    if (selectedIaId) {
+      // Filtrer les daaras par IA
+      this.filteredDaaras = this.daaras.filter(daara => daara.ief.ia_id === +selectedIaId);
+      console.log();
+    } else {
+      // Si aucune IA n'est sélectionnée, afficher tous les daaras
+      this.filteredDaaras = [...this.daaras];
+    }
+    this.updateMap(); // Mettre à jour la carte avec les daaras filtrés
+  }
+
+  // Initialiser la carte et charger les daaras
   private initMap(): void {
     const senegalCenter: [number, number] = [14.4974, -14.4524];
     this.map = L.map('map').setView(senegalCenter, 7);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(this.map);
+
     this.daaraService.getDaaras().subscribe((daaras: Daara[]) => {
-      daaras.forEach(daara => {
-        const [latitude, longitude] = daara.getCoordonnees();
+      this.daaras = daaras;
+      this.filteredDaaras = daaras; // Initialement afficher tous les daaras
+      this.updateMap(); // Mettre à jour la carte
 
-        const icon = L.divIcon({
-          className: 'custom-icon',
-          html: `<div style="background-color: blue; width: 20px; height: 20px; border-radius: 50%; border: 2px solid black;"></div>`,
-          iconSize: [20, 20],
-          iconAnchor: [10, 10]
-        });
-
-        L.marker([latitude, longitude])
-            .addTo(this.map)
-            .bindPopup(`<b style="font-weight: bold">${daara.nomDaara}</b><br>${daara.adresseDaara}<br>${daara.ief.nom}`)
-            .openPopup();
-      });
     });
+
     this.http.get('assets/senegal.geojson').subscribe((geojson: any) => {
       const geoJsonLayer = L.geoJSON(geojson, {
         style: {
@@ -62,6 +84,33 @@ export class DashboardComponent implements AfterViewInit {
 
       const bounds = geoJsonLayer.getBounds();
       this.map.fitBounds(bounds);
+    });
+  }
+
+  // Mettre à jour la carte avec les daaras filtrés
+  private updateMap(): void {
+    // Supprimer tous les marqueurs actuels de la carte
+    this.map.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        this.map.removeLayer(layer);
+      }
+    });
+
+    // Ajouter les marqueurs filtrés
+    this.filteredDaaras.forEach(daara => {
+      const [latitude, longitude] = daara.getCoordonnees();
+
+      const icon = L.divIcon({
+        className: 'custom-icon',
+        html: `<div style="background-color: blue; width: 20px; height: 20px; border-radius: 50%; border: 2px solid black;"></div>`,
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+      });
+
+      L.marker([latitude, longitude])
+          .addTo(this.map)
+          .bindPopup(`<b>${daara.nomDaara}</b><br>${daara.adresseDaara}<br>${daara.ief.nom}`)
+          .openPopup();
     });
   }
 
