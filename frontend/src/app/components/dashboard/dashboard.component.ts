@@ -8,6 +8,7 @@ import { Chart, registerables } from 'chart.js';
 import 'chartjs-plugin-datalabels';
 import { IA } from 'src/app/models/ia';
 import { DataIasService } from 'src/app/services/data-ias.service';
+import { ignoreElements } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -88,7 +89,7 @@ export class DashboardComponent implements AfterViewInit {
   }
 
   // Mettre à jour la carte avec les daaras filtrés
-  private updateMap(): void {
+  /*private updateMap(): void {
     // Supprimer tous les marqueurs actuels de la carte
     this.map.eachLayer((layer) => {
       if (layer instanceof L.Marker) {
@@ -112,7 +113,45 @@ export class DashboardComponent implements AfterViewInit {
           .bindPopup(`<b>${daara.nomDaara}</b><br>${daara.adresseDaara}<br>${daara.ief.nom}`)
           .openPopup();
     });
+  }*/
+// Mettre à jour la carte avec les daaras filtrés et zoomer sur les marqueurs
+private updateMap(): void {
+  // Supprimer tous les marqueurs actuels de la carte
+  this.map.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      this.map.removeLayer(layer);
+    }
+  });
+
+  // Initialiser une instance de LatLngBounds pour calculer les limites englobant tous les marqueurs
+  const bounds = L.latLngBounds([]);
+
+  // Ajouter les marqueurs filtrés
+  this.filteredDaaras.forEach(daara => {
+    const [latitude, longitude] = daara.getCoordonnees();
+
+    const icon = L.divIcon({
+      className: 'custom-icon',
+      html: `<div style="background-color: blue; width: 15px; height: 15px; border-radius: 50%; border: 2px solid black;"></div>`,
+      iconSize: [20, 20],
+      iconAnchor: [10, 10]
+    });
+
+    // Ajouter chaque marqueur à la carte
+    const marker = L.marker([latitude, longitude], { icon })
+      .addTo(this.map)
+      .bindPopup(`<b>${daara.nomDaara}</b><br>${daara.adresseDaara}<br>${daara.ief.nom}`);
+
+    // Ajouter chaque position au LatLngBounds
+    bounds.extend([latitude, longitude]);
+  });
+
+  // Zoomer et ajuster la vue pour englober tous les marqueurs
+  if (this.filteredDaaras.length > 0) {
+    this.map.fitBounds(bounds, { padding: [50, 50] });
   }
+}
+
 
   private loadCharts(): void {
     // Stacked Bar Chart
