@@ -25,6 +25,7 @@ class DaaraSeeder extends Seeder
                 'descriptionDaara' => 'Daara moderne',
                 'department_id' => 9,
                 'responsable_id' => 1,
+                'ief_id' => 28,
             ],
             [
                 'nomDaara' => 'DAARA NGOR',
@@ -36,6 +37,7 @@ class DaaraSeeder extends Seeder
                 'descriptionDaara' => 'École traditionnelle de Ngor',
                 'department_id' => 1,
                 'responsable_id' => 1,
+                'ief_id' => 1,
             ],
             [
                 'nomDaara' => 'DAARA SAINT-LOUIS',
@@ -47,6 +49,7 @@ class DaaraSeeder extends Seeder
                 'descriptionDaara' => 'Daara au bord du fleuve',
                 'department_id' => 3,
                 'responsable_id' => 1,
+                'ief_id' => 45,
             ],
             [
                 'nomDaara' => 'DAARA TOUBA',
@@ -58,6 +61,7 @@ class DaaraSeeder extends Seeder
                 'descriptionDaara' => 'Daara dans la ville sainte de Touba',
                 'department_id' => 15,
                 'responsable_id' => 1,
+                'ief_id' => 6,
             ],
             [
                 'nomDaara' => 'DAARA ZIGUINCHOR',
@@ -69,6 +73,7 @@ class DaaraSeeder extends Seeder
                 'descriptionDaara' => 'Daara de Ziguinchor',
                 'department_id' => 22,
                 'responsable_id' => 1,
+                'ief_id' => 59,
             ],
             [
                 'nomDaara' => 'DAARA KAOLACK',
@@ -80,6 +85,7 @@ class DaaraSeeder extends Seeder
                 'descriptionDaara' => 'École coranique de Kaolack',
                 'department_id' => 11,
                 'responsable_id' => 1,
+                'ief_id' => 17,
             ],
         ];
         foreach ($daaras as $daara) {
