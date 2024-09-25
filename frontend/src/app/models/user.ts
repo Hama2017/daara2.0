@@ -2,7 +2,7 @@ export class User {
     id!: number;
     nomUser!: string;
     prenomUser!: string;
-    emailUser!: string;
+    email!: string;
     mdpUser!: string;
     telephoneUser!: string;
     idProfil?: number;
