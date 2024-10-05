@@ -19,6 +19,9 @@ import { AjoutTypeDocumentComponent } from "./components/ajout-type-document/ajo
 import { EmailInboxComponent } from './components/email/email-inbox/email-inbox.component';
 import { EmailComposeComponent } from './components/email/email-compose/email-compose.component';
 import { EmailReadComponent } from './components/email/email-read/email-read.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/jwt-interceptor.service';
+
 
 
 
@@ -51,7 +54,9 @@ import { EmailReadComponent } from './components/email/email-read/email-read.com
     FormsModule,
 
   ],
-  providers: [],
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

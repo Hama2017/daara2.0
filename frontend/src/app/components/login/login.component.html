@@ -15,7 +15,7 @@
 
       <div class="container-login100">
         <div class="wrap-login100 p-6">
-          <form class="login100-form validate-form">
+          <form class="login100-form validate-form" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
                             <span class="login100-form-title pb-5">
                                 Connexion
                             </span>
@@ -29,18 +29,26 @@
                       <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                         <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
                       </a>
-                      <input class="input100 border-start-0 form-control ms-0" type="email" placeholder="Email">
+                      <input class="input100 border-start-0 form-control ms-0" 
+                      type="email" placeholder="Email"
+                      id="emailUser"
+                      name="emailUser"
+                      ngModel>
                     </div>
                     <div class="wrap-input100 validate-input input-group" id="Password-toggle">
                       <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                         <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                       </a>
-                      <input class="input100 border-start-0 form-control ms-0" type="password" placeholder="Mot de passe">
+                      <input class="input100 border-start-0 form-control ms-0" 
+                      type="password" placeholder="Mot de passe"
+                      id="mdpUser"
+                      name="mdpUser"
+                      ngModel>
                     </div>
                     <div class="container-login100-form-btn">
-                      <a href="/admin" class="login100-form-btn btn-primary">
+                      <button type="submit" class="login100-form-btn btn-primary">
                         Se connecter
-                      </a>
+                      </button>
                     </div>
                   </div>
 

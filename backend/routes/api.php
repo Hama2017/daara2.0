@@ -19,6 +19,7 @@ use App\Http\Controllers\DocDaaraController;
 use App\Http\Controllers\DaaraController;
 use App\Http\Controllers\TrDocDaaraController;
 use App\Http\Controllers\DisciplineController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,7 @@ Route::apiResource('trDisciplinesEnseignants', TrDisciplineEnseignantController:
 Route::apiresource('typedocuments',TypeDocumentController::class);
 Route::apiresource('ias',IAController::class);
 Route::apiresource('iefs',IEFController::class);
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
+

@@ -7,11 +7,14 @@ import { Component, AfterViewInit, Renderer2 } from '@angular/core';
 
 export class AdminComponent implements AfterViewInit {
 
+  userId: string | null = '';
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
     console.log('AdminComponent View Initialized');
     this.initializeSidebar();
+    this.userId = localStorage.getItem('userId');
+    console.log('User ID:', this.userId);
   }
 
   initializeSidebar(): void {
