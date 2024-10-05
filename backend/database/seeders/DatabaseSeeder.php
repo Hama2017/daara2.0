@@ -21,14 +21,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-            RegionSeeder::class,
-            DepartementSeeder::class,
-            ProfilSeeder::class,
-            UserSeeder::class,
-            DaaraSeeder::class,
-            TdNiveauSeeder::class,
-            ApprenantSeeder::class,
-            InscriptionSeeder::class,
+            // RegionSeeder::class,
+            // DepartementSeeder::class,
+            // ProfilSeeder::class,
+            // UserSeeder::class,
+             DaaraSeeder::class,
+            // TdNiveauSeeder::class,
+            // ApprenantSeeder::class,
+            // InscriptionSeeder::class,
         ]);
     }
 }
