@@ -1,4 +1,6 @@
 import { Component, AfterViewInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
+import { AutheService } from 'src/app/services/authe.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +10,7 @@ import { Component, AfterViewInit, Renderer2 } from '@angular/core';
 export class AdminComponent implements AfterViewInit {
 
   userId: string | null = '';
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2,private authService: AutheService,private router: Router) {}
 
   ngAfterViewInit(): void {
     console.log('AdminComponent View Initialized');
@@ -37,6 +39,14 @@ export class AdminComponent implements AfterViewInit {
           console.log('Parent class toggled');
         }
       });
+    });
+  }
+  logout() {
+    this.authService.logout().subscribe(() => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('userId');
+      window.location.href = 'http://localhost:4200/';
+      //this.router.navigateByUrl('');
     });
   }
 }
