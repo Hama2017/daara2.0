@@ -18,10 +18,7 @@ export class LoginComponent {
         next: (response) => {
           console.log('User logged in successfully', response);
           localStorage.setItem('token', response.token); // Stocker le token
-
-        
-            this.router.navigate(['/admin']);
-         
+            window.location.href = '/admin'
         },
         error: (error) => {
           console.error('Login error', error);
