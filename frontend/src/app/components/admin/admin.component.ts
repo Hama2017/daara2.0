@@ -45,7 +45,8 @@ export class AdminComponent implements AfterViewInit {
     this.authService.logout().subscribe(() => {
       localStorage.removeItem('token');
       localStorage.removeItem('userId');
-      this.router.navigateByUrl('');
+      window.location.href = 'http://localhost:4200/';
+      //this.router.navigateByUrl('');
     });
   }
 }

@@ -16,10 +16,11 @@ import {EditTypeDocumentComponent} from "./components/edit-type-document/edit-ty
 import { EmailComposeComponent } from './components/email/email-compose/email-compose.component';
 import { EmailInboxComponent } from './components/email/email-inbox/email-inbox.component';
 import { EmailReadComponent } from './components/email/email-read/email-read.component';
+import { AuthGuard } from './AuthGuard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'admin', component: AdminComponent,
+  { path: 'admin', component: AdminComponent,canActivate:[AuthGuard],
     children: [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },

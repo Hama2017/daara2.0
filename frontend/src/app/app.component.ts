@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -10,15 +11,13 @@ import * as $ from 'jquery';
 
 export class AppComponent implements AfterViewInit {
   constructor() { }
-
+  
   ngAfterViewInit(): void {
-
     this.initializeLoadingPage();
     this.initializeFullScreenButton();
-
-
+    
   }
-
+  
   private initializeLoadingPage(): void {
 
     $(window).on("load", function (e) {
