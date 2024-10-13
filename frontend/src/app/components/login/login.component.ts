@@ -21,6 +21,9 @@ export class LoginComponent {
 
         
             this.router.navigate(['/admin']);
+            setTimeout(()=>{
+              window.location.reload();
+            },10);
          
         },
         error: (error) => {
