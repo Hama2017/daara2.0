@@ -9,6 +9,10 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\TdNiveauController;
 use App\Http\Controllers\TrDisciplineEnseignantController;
 use App\Http\Controllers\TrDocApprenantController;
+use App\Http\Controllers\TrParentApprenantController;
+use App\Http\Controllers\TrTuteurApprenantController;
+use App\Http\Controllers\TuteurController;
+use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\TypeDocumentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -32,6 +36,10 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+Route::resource('parents',ParentsController::class);
+Route::resource('tuteurs',TuteurController::class);
+Route::resource('trparentapprenant',TrParentApprenantController::class);
+Route::resource('trtuteurapprenant',TrTuteurApprenantController::class);
 Route::apiResource('regions', RegionController::class);
 Route::apiResource('departements', DepartementController::class);
 Route::apiResource('doc-daaras', DocDaaraController::class);
