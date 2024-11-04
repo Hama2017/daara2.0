@@ -1,1 +1,42 @@
-<p>niveau works!</p>
+<div class="card mt-9">
+    <div class="card-header">
+      <h3 class="card-title">Liste des Niveaux</h3>
+    </div>
+    <div class="card-body">
+      <button id="bEdit" class="btn btn-sm btn-primary m-2 float-end">
+        <span class="fe fe-plus"> </span>
+      </button>
+      <div class="table-responsive">
+        <table class="table table-bordered border text-nowrap mb-0" id="basic-edit">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nom</th>
+              <th>Mensualité</th>
+              <th>Droit Inscription</th>
+              <th>Durée</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let niveau of niveaux; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ niveau.nomNiveau }}</td>
+              <td>{{ niveau.mensualiteNiveau }}</td>
+              <td>{{ niveau.droitInscription }}</td>
+              <td>{{ niveau.dureeNiveau }}</td>
+              <td>
+                <button id="bEdit" class="btn btn-sm btn-primary m-2" [routerLink]="['/admin/edit-niveau', niveau.id]">
+                  <span class="fe fe-edit"> </span>
+                </button>
+                <button id="bDel" (click)="deleteNiveau(niveau.id)" type="button" class="btn btn-sm btn-danger">
+                  <span class="fe fe-trash-2"> </span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

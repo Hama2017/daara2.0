@@ -10,7 +10,7 @@ import { ConstModule } from '../consts.module';
 })
 export class DataNiveauService {
   private const = new ConstModule();
-  private entity = '/tdniveaux/';
+  private entity = '/tdNiveaux/';
   private apiUrl = this.const.url + this.entity;
 
   constructor(private httpclient: HttpClient) {}

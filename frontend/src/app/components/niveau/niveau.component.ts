@@ -21,4 +21,10 @@ export class NiveauComponent implements OnInit {
       this.niveaux = data;
     });
   }
+
+  deleteNiveau(id: number): void {
+    this.dataNiveauService.deleteNiveau(id).subscribe(() => {
+      this.niveaux = this.niveaux.filter((niveau) => niveau.id !== id);
+    });
+  }
 }

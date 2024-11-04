@@ -2,7 +2,7 @@ export interface Niveau {
     id: number;
     nomNiveau: string;
     mensualiteNiveau: number;
-    droitInscriptionNiveau: number;
+    droitInscription: number;
     dureeNiveau: number;
 }
   
