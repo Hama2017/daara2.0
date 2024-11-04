@@ -21,6 +21,7 @@ import { EmailComposeComponent } from './components/email/email-compose/email-co
 import { EmailReadComponent } from './components/email/email-read/email-read.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt-interceptor.service';
+import { NiveauComponent } from './components/niveau/niveau.component';
 
 
 
@@ -43,6 +44,7 @@ import { JwtInterceptor } from './services/jwt-interceptor.service';
     EmailInboxComponent,
     EmailComposeComponent,
     EmailReadComponent,
+    NiveauComponent,
 
   ],
   imports: [

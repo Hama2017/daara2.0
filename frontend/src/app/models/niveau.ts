@@ -1,5 +1,5 @@
 export interface Niveau {
-    idNiveau: number;
+    id: number;
     nomNiveau: string;
     mensualiteNiveau: number;
     droitInscriptionNiveau: number;
