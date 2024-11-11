@@ -107,7 +107,7 @@
                             <li class="sub-category">
                                 <h3>Gestion Daaras</h3>
                             </li>
-                            <li class="slide"  *ngIf="nomProfil === 'Admin'">
+                            <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon icon fa fa-institution"></i><span
                   class="side-menu__label">Daaras</span><i
                   class="angle fe fe-chevron-right"></i>
@@ -118,8 +118,8 @@
                                             <div class="tab-content">
                                                 <div class="tab-pane active" id="side1">
                                                     <ul class="sidemenu-list">
-                                                        <li><a [routerLink]="['/admin/ajout-daara']" class="slide-item">Enrollement </a></li>
-                                                        <li><a [routerLink]="['/admin/liste-daaras']" class="slide-item">Lister</a></li>
+                                                        <li><a *ngIf="nomProfil === 'Admin'" [routerLink]="['/admin/ajout-daara']" class="slide-item">Enrollement </a></li>
+                                                        <li><a *ngIf="nomProfil === 'Admin'" [routerLink]="['/admin/liste-daaras']" class="slide-item">Lister</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
