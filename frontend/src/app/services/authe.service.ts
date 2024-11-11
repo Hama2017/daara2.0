@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators'; 
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,7 @@ export class AutheService {
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
       tap((response:any) => {
-        // Stocker l'ID de l'utilisateur dans localStorage
-        localStorage.setItem('userId', response.user.id);  // 'response.user.id' doit correspondre à ta structure de réponse
+       localStorage.setItem('user', JSON.stringify(response.user)); 
       })
     );
   }

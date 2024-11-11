@@ -35,11 +35,11 @@ class ApprenantController extends Controller
     {
         try {
             $request->validate([
-                'matriculeApprenant' => 'required|string|max:50',
+                'matriculeApprenant' => 'nullable|string|max:50',
                 'prenomApprenant' => 'required|string|max:100',
                 'nomApprenant' => 'required|string|max:80',
-                'dateNaissApprenant' => 'required|date|max:8',
-                'lieuNaissApprenant' => 'required|string|email|max:30',
+                'dateNaissApprenant' => 'required|date',
+                'lieuNaissApprenant' => 'required|string',
                 'sexeApprenant' => 'required|string|max:10',
             ]);
 

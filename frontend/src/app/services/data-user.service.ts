@@ -52,6 +52,9 @@ export class DataUserService {
       return of(result as T);
     };
   }
+  getProfilById(idProfil: number): Observable<Profil> {
+    return this.httpclient.get<Profil>(`${this.const.url}/profils/${idProfil}`);
+  }
 
   /**
    * Insère un nouvel utilisateur dans l'API.

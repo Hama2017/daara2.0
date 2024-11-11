@@ -5,6 +5,6 @@ export class User {
     email!: string;
     mdpUser!: string;
     telephoneUser!: string;
-    idProfil?: number;
+    idProfil!: number;
     nomProfil!: string;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { catchError,map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ConstModule } from '../consts.module';
 import {TypeDocument} from "../models/type-document";
@@ -122,6 +122,27 @@ export class DataTypeDocumentService {
           };
           return of(formattedError);
         })
+    );
+  }
+
+  getDataTypeDocumentApprenant() {
+    return this.getDataTypeDocument().pipe(
+      map((data: any) => {
+        // Vérifie si la récupération est un succès et filtre les données
+        if (Array.isArray(data)) {
+          return data.filter((doc: TypeDocument) => doc.TypeDoc === 'Apprenant');
+        }
+        // Retourne une liste vide si une erreur s'est produite
+        return [];
+      }),
+      catchError((error) => {
+        const formattedError = {
+          success: false,
+          message: error.message,
+          error: error.statusText || 'Erreur Inconnue',
+        };
+        return of(formattedError);
+      })
     );
   }
 }

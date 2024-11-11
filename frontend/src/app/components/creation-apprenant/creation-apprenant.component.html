@@ -1,0 +1,310 @@
+<div class="row mt-9">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header border-bottom-0">
+          <div class="card-title">
+            Inscription Eleve
+          </div>
+        </div>
+        <div class="card-body">
+          <form novalidate>
+            <div id="wizard1">
+              <h3>Informations Ndongo</h3>
+              <section>
+  
+                <div class="row">
+                  <div class="col-md-6">
+  
+                    <div class="control-group form-group">
+                      <label class="form-label">Prenom *</label>
+                      <input type="text" class="form-control required" name="Prenom"  placeholder="Prenom" required>
+                    </div>
+                    <div class="control-group form-group">
+                      <label class="form-label">Nom *</label>
+                      <input type="text" class="form-control required" name="Nom" placeholder="Nom" required>
+                    </div>
+                    <div class="control-group form-group">
+                      <label class="form-label">Date de naissance *</label>
+                      <input type="date" class="form-control required" name="DateNaiss" placeholder="Date de naissance" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="control-group form-group">
+                      <label class="form-label">Sexe *</label>
+                      <select class="form-control form-select" name="Sexe" required>
+                        <option value="" disabled selected>Sélectionner le sexe</option>
+                        <option value="Masculin">Masculin</option>
+                        <option value="Femminin">Feminin</option>
+                      </select>
+                    </div>
+                    <div class="control-group form-group">
+                        <label class="form-label">Lieu de naissance *</label>
+                        <input type="text" class="form-control required" name="LieuNaiss" placeholder="Lieu de naissance" required>
+                      </div>
+                  </div>
+                </div>
+              </section>
+              <h3>Informations Parents</h3>
+              <section>
+  
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Informations du Père</h5>
+                    <div class="control-group form-group">
+                      <label class="form-label">Prenom *</label>
+                      <input type="text" class="form-control required" name="PrenomPere"  placeholder="Prenom du Père">
+                    </div>
+                    <div class="control-group form-group">
+                      <label class="form-label">Nom *</label>
+                      <input type="text" class="form-control required" name="NomPere"  placeholder="Nom du Père">
+                    </div>
+  
+                    <div class="control-group form-group">
+                      <label class="form-label">Telephone</label>
+                      <input type="text" class="form-control required" name="TelephonePere"  placeholder="Téléphone du Père">
+                    </div>
+  
+                    <div class="control-group form-group">
+                      <label class="form-label">Adresse</label>
+                      <input type="text" class="form-control required" name="AdressePere"  placeholder="Adresse du Père">
+                    </div>
+  
+                    <div class="control-group form-group">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control required" name="EmailPere"  placeholder="Email du Père">
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Informations de la Mère</h5>
+                    <div class="control-group form-group">
+                      <label class="form-label">Prenom *</label>
+                      <input type="text" class="form-control required" name="PrenomMere"  placeholder="Prenom de la Mère">
+                    </div>
+                    <div class="control-group form-group">
+                      <label class="form-label">Nom *</label>
+                      <input type="text" class="form-control required" name="NomMere"  placeholder="Nom de la Mère">
+                    </div>
+  
+                    <div class="control-group form-group">
+                      <label class="form-label">Telephone</label>
+                      <input type="text" class="form-control required" name="TelephoneMere"  placeholder="Téléphone de la Mère">
+                    </div>
+  
+                    <div class="control-group form-group">
+                      <label class="form-label">Adresse</label>
+                      <input type="text" class="form-control required" name="AdresseMere"  placeholder="Adresse de la Mère">
+                    </div>
+                    <div class="control-group form-group">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control required" name="EmailMere"  placeholder="Email de la Mère">
+                    </div>
+  
+                  </div>
+                </div>
+  
+              </section>
+              <h3>Choix Tuteurs</h3>
+              <section>
+                <div class="form-group checkboxes-container">
+                  <label class="form-label mt-3 mb-3">Choisir 2 Tuteurs aux maximum</label>
+                  <div class="selectgroup selectgroup-pills">
+                    <label class="selectgroup-item">
+                      <input type="checkbox" name="value" value="Père" id="pereCheckbox" class="selectgroup-input">
+                      <span class="selectgroup-button">Père</span>
+                    </label>
+                    <label class="selectgroup-item">
+                      <input type="checkbox" name="value" value="Mère" id="mereCheckbox" class="selectgroup-input">
+                      <span class="selectgroup-button">Mère</span>
+                    </label>
+                    <label class="selectgroup-item">
+                      <input type="checkbox" name="value" value="Autres"  id="autresCheckbox" class="selectgroup-input">
+                      <span class="selectgroup-button">Autres</span>
+                    </label>
+                  </div>
+                </div>
+  
+                <div id="tuteurFormsContainer" style="display:none;">
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div id="tuteurForm1" class="tuteurForm">
+                        <!-- Formulaire Tuteur 1 -->
+                        <div class="control-group form-group">
+                          <label class="form-label">Prenom Tuteur *</label>
+                          <input type="text" class="form-control required" name="PrenomTuteur"  placeholder="Prenom Tuteur">
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label">Nom Tuteur *</label>
+                          <input type="text" class="form-control required" name="NomTuteur"  placeholder="Nom Tuteur">
+                        </div>
+  
+                        <div class="control-group form-group">
+                          <label class="form-label">Sexe Tuteur *</label>
+                          <select class="form-control form-select" name="SexeTuteur"  data-bs-placeholder="Selectionner Sexe">
+                            <option value="Masculin">Masculin</option>
+                            <option value="Femminin">Femminin</option>
+                          </select>
+                        </div>
+  
+                        <div class="control-group form-group">
+                          <label class="form-label">Telephone Tuteur *</label>
+                          <input type="number" class="form-control required" name="TelephoneTuteur"  placeholder="Téléphone Tuteur">
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label">Adresse Tuteur </label>
+                          <input type="text" class="form-control required" name="AdresseTuteur"  placeholder="Adresse Tuteur">
+                        </div>
+  
+                        <div class="control-group form-group">
+                          <label class="form-label">Email Tuteur</label>
+                          <input type="email" class="form-control required" name="EmailTuteur"  placeholder="Email Tuteur">
+                        </div>
+  
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="tuteurForm2" class="tuteurForm" style="display:none;">
+                        <!-- Formulaire Tuteur 2 (caché initialement) -->
+                        <div class="control-group form-group">
+                          <label class="form-label">Prenom Tuteur 2 </label>
+                          <input type="text" class="form-control required" name="PrenomTuteur2"  placeholder="Prenom Tuteur">
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label">Nom Tuteur 2 </label>
+                          <input type="text" class="form-control required" name="NomTuteur2"  placeholder="Nom Tuteur">
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label">Sexe Tuteur 2 </label>
+                          <select class="form-control form-select" name="SexeTuteur2">
+                            <option value="">Selectionner Sexe</option>
+                            <option value="Masculin">Masculin</option>
+                            <option value="Femminin">Femminin</option>
+                          </select>
+                        </div>
+                        <div class="control-group form-group">
+                          <label class="form-label">Telephone Tuteur 2 </label>
+                          <input type="number" class="form-control required" name="TelephoneTuteur2"  placeholder="Téléphone Tuteur">
+                        </div>
+  
+                        <div class="control-group form-group">
+                          <label class="form-label">Adresse Tuteur 2</label>
+                          <input type="text" class="form-control required" name="AdresseTuteur2"  placeholder="Adresse Tuteur">
+                        </div>
+  
+                        <div class="control-group form-group">
+                          <label class="form-label">Email Tuteur 2 </label>
+                          <input type="email" class="form-control required" name="EmailTuteur2"  placeholder="Email Tuteur">
+                        </div>
+  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+  
+              </section>
+              <h3>Documents & Niveau</h3>
+              <section>
+                <div class="row">
+  
+                  <div class="col-md-4">
+                    <div class="control-group form-group">
+                      <label class="form-label">Niveau</label>
+                      <select class="form-control form-select" id="NiveauClasseEleve" name="NiveauClasseEleve" data-bs-placeholder="Selectionner un niveau de classe">
+                      </select>
+                    </div>
+                  </div>
+
+  
+  
+                  <div class="col-md-9">
+  
+                    <label class="form-label">Choisir Document</label>
+                    <select class="form-control form-select document-select"  id="typeDocument">
+                    </select>
+  
+                    <input class="form-control" type="file" id="fileInput">
+                    <button (click)="ajouterDocument()" id="ajouterBtn" class="btn btn-primary mt-4 mb-4">Ajouter</button>
+                    <div class="table-responsive">
+                      <table class="table table-bordered border text-nowrap mb-0" id="basic-edit">
+                        <thead>
+                        <tr>
+                          <th>Type</th>
+                          <th>Nom</th>
+                          <th name="bstable-actions">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="documentTableBody">
+                        <!-- Les documents seront ajoutés ici -->
+                        </tbody>
+                      </table>
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </section>
+              <h3>Récapitulatif</h3>
+              <section>
+                <div id="recapSection" class="row">
+                  <div class="col">
+                    <div class="recap-container">
+                      <h5 class="text-primary"><strong>Informations Élève</strong></h5>
+                      <p id="recapPrenom"></p>
+                      <p id="recapNom"></p>
+                      <p id="recapDateNaiss"></p>
+                      <p id="recapLieuNaiss"></p>
+                      <p id="recapAdresse"></p>
+                      <p id="recapSexe"></p>
+                      <p id="recapNumeroTelephone"></p>
+                      <p id="recapAnneeScolaire"></p>
+                    </div>
+                  </div>
+  
+                  <div class="col">
+                    <div class="recap-container">
+  
+                      <h5 class="text-primary"><strong>Informations Parents</strong></h5>
+                      <h6><strong>Père</strong></h6>
+                      <p id="recapPrenomPere"></p>
+                      <p id="recapNomPere"></p>
+                      <p id="recapTelephonePere"></p>
+                      <p id="recapEmailPere"></p>
+                      <p id="recapAdressePere"></p>
+  
+                      <h6><strong>Mère</strong></h6>
+                      <p id="recapPrenomMere"></p>
+                      <p id="recapNomMere"></p>
+                      <p id="recapTelephoneMere"></p>
+                      <p id="recapEmailMere"></p>
+                      <p id="recapAdresseMere"></p>
+                    </div>
+                  </div>
+  
+                  <div class="col">
+                    <div class="recap-container">
+                      <h5 class="text-primary"><strong>Tuteurs</strong></h5>
+                      <div id="recapTuteurs"></div>
+                    </div>
+                  </div>
+  
+                 
+  
+                  <div class="col">
+                    <div class="recap-container">
+                      <h5 class="text-primary"><strong>Documents</strong></h5>
+                      <div id="recapDocuments"></div>
+                    </div>
+                  </div>
+  
+                </div>
+              </section>
+  
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -58,9 +58,9 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading">
-                                                    <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">Hama Ba</h5>
-                                                        <small class="text-muted">Admin</small>
+                                                    <div *ngIf="user" class="text-center">
+                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">{{ user.nomUser }}</h5>
+                                                        <small class="text-muted">{{ nomProfil }}</small>
                                                     </div>
                                                 </div>
                                                 <div class="dropdown-divider m-0"></div>
@@ -103,11 +103,11 @@
                                 <a class="side-menu__item has-link" data-bs-toggle="slide" [routerLink]="['/admin/dashboard']"><i
                   class="side-menu__icon fe fe-home"></i><span
                   class="side-menu__label">Dashboard</span></a>
-                            </li>
+                            </li> 
                             <li class="sub-category">
                                 <h3>Gestion Daaras</h3>
                             </li>
-                            <li class="slide">
+                            <li class="slide"  *ngIf="nomProfil === 'Admin'">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon icon fa fa-institution"></i><span
                   class="side-menu__label">Daaras</span><i
                   class="angle fe fe-chevron-right"></i>
@@ -135,6 +135,11 @@
                             <li class="sub-category">
                                 <h3>Parametrages</h3>
                             </li>
+                            <li class="slide">
+                              <a [routerLink]="['/admin/inscription']" class="slide-item" 
+                              *ngIf="nomProfil === 'Responsable daara'"><i class="side-menu__icon icon fa fa-graduation-cap">
+                              </i>
+                              Isncription </a></li> 
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                   class="side-menu__icon icon icon-layers"></i><span

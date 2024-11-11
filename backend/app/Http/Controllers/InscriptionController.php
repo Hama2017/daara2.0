@@ -38,28 +38,24 @@ class InscriptionController extends Controller
         try {
             // Validation des données d'entrée
             $validated = $request->validate([
-                'numeroInscription' => 'required|numeric|max:50',
+                'numeroInscription' => 'required|numeric',
                 'mensualite' => 'required|numeric',
                 'droitInscription' => 'required|numeric',
                 'dateInscription' => 'required|date',
                 'apprenant_id' => 'required|exists:apprenants,id',
                 'daara_id' => 'required|exists:daaras,id',
-                'tdNiveau_id' => 'required|exists:$tdNiveaux,id',
+                'tdNiveau_id' => 'required|exists:td_niveaux,id',
             ]);
 
             // Création d'un nouveau Inscription
             $inscriptions = Inscription::create($validated);
 
-            return response()->json([
-                'message' => 'Inscription créé avec succès',
-                'Inscription' => $inscriptions,
-            ], 201);
+            return response()->json([$inscriptions], 201);
         } catch (ValidationException $e) {
             // Gestion des exceptions pour les erreurs de validation
             return response()->json(['error' => $e->errors()], 422);
         } catch (Exception $e) {
-            // Gestion des exceptions pour les erreurs inattendues
-            return response()->json(['error' => 'Erreur lors de la création du Inscription'], 500);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
     }
 
@@ -71,7 +67,7 @@ class InscriptionController extends Controller
 
             // Validation des données d'entrée
             $validated = $request->validate([
-                'numeroInscription' => 'required|numeric|max:50',
+                'numeroInscription' => 'required|string|max:50',
                 'mensualite' => 'required|numeric',
                 'droitInscription' => 'required|numeric',
                 'dateInscription' => 'required|date',
@@ -84,7 +80,6 @@ class InscriptionController extends Controller
             $inscriptions->update($validated);
 
             return response()->json([
-                'message' => 'Inscription mis à jour avec succès',
                 'Inscription' => $inscriptions,
             ]);
         } catch (ValidationException $e) {
@@ -92,7 +87,7 @@ class InscriptionController extends Controller
             return response()->json(['error' => $e->errors()], 422);
         } catch (Exception $e) {
             // Gestion des exceptions pour les erreurs inattendues
-            return response()->json(['error' => 'Erreur lors de la mise à jour du Inscription'], 500);
+            return response()->json(['message' => $e->getMessage()], 500);
         }
     }
 

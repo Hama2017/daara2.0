@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TrTuteurApprenant extends Model
 {
-    protected $table='TrTuteurApprenant';
+    //protected $table='TrTuteurApprenant';
     protected $guarded=[];
     use HasFactory;
 }

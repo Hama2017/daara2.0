@@ -8,12 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Inscription extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'numeroInscription',
-        'mensualite',
-        'droitInscription',
-        'dateInscription',
-    ];
+    protected $guarded = [];
 
     public function tdNiveau()
     {

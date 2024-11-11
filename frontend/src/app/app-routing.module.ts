@@ -17,6 +17,7 @@ import { EmailComposeComponent } from './components/email/email-compose/email-co
 import { EmailInboxComponent } from './components/email/email-inbox/email-inbox.component';
 import { EmailReadComponent } from './components/email/email-read/email-read.component';
 import { AuthGuard } from './AuthGuard';
+import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'inscription', component: CreationApprenantComponent },
       { path: 'profil', component: ProfilComponent },
       { path: 'ajout-daara', component: CreationDaaraComponent },
       { path: 'liste-daaras', component: ListeDaaraComponent },

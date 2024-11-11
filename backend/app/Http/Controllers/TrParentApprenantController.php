@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tr_Parent_Apprenant;
+use App\Models\TrParentApprenant;
 use Illuminate\Http\Request;
+use App\Models\Apprenant;
 
 class TrParentApprenantController extends Controller
 {
     public function index()
     {
         try {
-            $tpe = Tr_Parent_Apprenant::all();
+            $tpe = TrParentApprenant::all();
             return response()->json($tpe,200);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()]);
@@ -35,7 +36,7 @@ class TrParentApprenantController extends Controller
                 'parent_id' => 'required|numeric',
                 'apprenant_id' => 'required|numeric',
             ]);
-            $tpe = Tr_Parent_Apprenant::create([
+            $tpe = TrParentApprenant::create([
                 'parent_id' => $request->parent_id,
                 'apprenant_id' => $request->apprenant_id
             ]);
