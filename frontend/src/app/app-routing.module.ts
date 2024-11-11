@@ -18,6 +18,7 @@ import { EmailInboxComponent } from './components/email/email-inbox/email-inbox.
 import { EmailReadComponent } from './components/email/email-read/email-read.component';
 import { AuthGuard } from './AuthGuard';
 import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
+import { NiveauComponent } from './components/niveau/niveau.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'inbox', component: EmailInboxComponent },
       { path: 'compose', component: EmailComposeComponent },
       { path: 'read', component: EmailReadComponent },
+      { path: 'niveaux', component: NiveauComponent },
 
     ]},
 ];

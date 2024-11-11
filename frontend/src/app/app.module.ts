@@ -22,6 +22,7 @@ import { EmailReadComponent } from './components/email/email-read/email-read.com
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt-interceptor.service';
 import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
+import { NiveauComponent } from './components/niveau/niveau.component';
 
 
 
@@ -45,7 +46,7 @@ import { CreationApprenantComponent } from './components/creation-apprenant/crea
     EmailComposeComponent,
     EmailReadComponent,
     CreationApprenantComponent,
-
+    NiveauComponent
   ],
   imports: [
     BrowserModule,
