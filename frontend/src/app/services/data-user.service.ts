@@ -39,6 +39,10 @@ export class DataUserService {
       })
     );
   }
+  getUserData(id: number) {
+    return this.httpclient.get<User>(this.apiUrl + id);
+  }
+  
     // Méthode pour récupérer les profils
     getProfils(): Observable<Profil[]> {
       return this.httpclient.get<Profil[]>(`${this.const.url}/profils`).pipe(
