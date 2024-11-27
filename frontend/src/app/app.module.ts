@@ -23,6 +23,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt-interceptor.service';
 import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
 import { NiveauComponent } from './components/niveau/niveau.component';
+import { DashboardDaaraComponent } from './components/dashboard-daara/dashboard-daara.component';
 
 
 
@@ -46,7 +47,8 @@ import { NiveauComponent } from './components/niveau/niveau.component';
     EmailComposeComponent,
     EmailReadComponent,
     CreationApprenantComponent,
-    NiveauComponent
+    NiveauComponent,
+    DashboardDaaraComponent
   ],
   imports: [
     BrowserModule,

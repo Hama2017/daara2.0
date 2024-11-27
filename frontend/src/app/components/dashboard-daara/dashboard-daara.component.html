@@ -1,0 +1,99 @@
+<div class="main-container container-fluid mt-9 bg-light">
+
+    <!-- PAGE-HEADER -->
+    <div class="page-header">
+        <h1 class="page-title">Bienvenue sur votre Dashboard</h1>
+    </div>
+    <div class="modal-body">
+        <div class="row text-center">
+            <div class="col-sm">
+                <p><strong style="font-size: 20px;">Adresse<br> Medina,Rue 31 </strong>
+                </p>
+            </div>
+            <div class="col-sm">
+                <p>
+                    <strong style="font-size: 20px;">IEF<br></strong> Medina Yoro Foula </p>
+            </div>
+            <div class="col-sm">
+                <p>
+                    <strong style="font-size: 20px;">Responsable<br></strong> Mbaye Donde
+                </p>
+            </div>
+        </div>
+        <!-- Section des métriques -->
+        <div class="row text-center my-3">
+            <!-- total eleves -->
+            <div class="col-sm">
+                <div class="card bg-primary img-card box-primary-shadow">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h2 class="mb-0 number-font">75</h2>
+                                <p class="text-white mb-0">Total apprenants </p>
+                            </div>
+                            <div class="ms-auto"> <i class="fa fa-users text-white fs-30 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- taux abandons -->
+            <div class="col-sm">
+                <div class="card bg-secondary img-card box-shadow-secondary">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h2 class="mb-0 number-font">0 %</h2>
+                                <p class="text-white mb-0">Taux d'abandons</p>
+                            </div>
+                            <div class="ms-auto"> <i class="fa fa-caret-square-o-down text-white fs-30 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--total personnel-->
+            <div class="col-sm">
+                <div class="card  bg-success img-card box-success-shadow">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="text-white">
+                                <h2 class="mb-0 number-font">12</h2>
+                                <p class="text-white mb-0">Total personnel</p>
+                            </div>
+                            <div class="ms-auto"> <i class="fa fa-user-circle text-white fs-30 me-2 mt-2"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COL END -->
+        </div>
+
+
+        <!-- Section des graphiques circulaires -->
+        <div class="row text-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Repartion des sexes</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chartsh">
+                            <canvas id="chart1" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Repartition des ages</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chartsh">
+                            <canvas id="chart2" width="400" height="350"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
