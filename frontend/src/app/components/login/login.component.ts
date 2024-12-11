@@ -93,14 +93,8 @@ export class LoginComponent implements OnInit {
 
         if (this.nomProfil === 'Admin') {
           this.router.navigate(['/admin']);
-          setTimeout(()=>{
-            window.location.reload();
-          }, 100)
         } else if (this.nomProfil === 'Responsable daara') {
-          this.router.navigate(['/admin']);
-          setTimeout(()=>{
-            window.location.reload();
-          }, 100)
+          this.router.navigate(['/daara']);
         } else {
           Swal.fire({
             title: 'Erreur!',

@@ -19,6 +19,7 @@ import { EmailReadComponent } from './components/email/email-read/email-read.com
 import { AuthGuard } from './AuthGuard';
 import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
 import { NiveauComponent } from './components/niveau/niveau.component';
+import {DashboardDaaraComponent} from "./components/dashboard-daara/dashboard-daara.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -42,6 +43,26 @@ const routes: Routes = [
       { path: 'read', component: EmailReadComponent },
       { path: 'niveaux', component: NiveauComponent },
 
+    ]},
+  { path: 'daara', component: AdminComponent,canActivate:[AuthGuard],
+    children: [
+      { path: '', component: DashboardDaaraComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'inscription', component: CreationApprenantComponent },
+      { path: 'profil', component: ProfilComponent },
+      { path: 'ajout-daara', component: CreationDaaraComponent },
+      { path: 'liste-daaras', component: ListeDaaraComponent },
+      { path: 'edit-profil/:id', component: EditProfilComponent },
+      { path: 'user', component: UserComponent },
+      { path: 'add-user', component: AddUserComponent },
+      { path: 'edit-user/:id', component: EditUserComponent },
+      { path: 'ajout-typedocument', component: AjoutTypeDocumentComponent },
+      { path: 'liste-typedocument', component: ListeTypeDocumentComponent },
+      { path: 'edit-typedocument/:id', component: EditTypeDocumentComponent },
+      { path: 'inbox', component: EmailInboxComponent },
+      { path: 'compose', component: EmailComposeComponent },
+      { path: 'read', component: EmailReadComponent },
+      { path: 'niveaux', component: NiveauComponent },
     ]},
 ];
 

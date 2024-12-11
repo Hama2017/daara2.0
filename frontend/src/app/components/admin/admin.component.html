@@ -1,11 +1,4 @@
 <div class="app sidebar-mini ltr light-mode">
-
-    <!-- GLOBAL-LOADER -->
-    <div id="global-loader">
-        <img src="assets/images/loader.svg" class="loader-img" alt="Loader">
-    </div>
-    <!-- /GLOBAL-LOADER -->
-
     <!-- PAGE -->
     <div class="page">
         <div class="page-main">
@@ -136,7 +129,7 @@
                                 <h3>Parametrages</h3>
                             </li>
                             <li class="slide">
-                                <a [routerLink]="['/admin/inscription']" class="slide-item" *ngIf="nomProfil === 'Responsable daara'"><i class="side-menu__icon icon fa fa-graduation-cap">
+                                <a [routerLink]="['/admin/inscription']" class="side-menu__item" *ngIf="nomProfil === 'Responsable daara'"><i class="side-menu__icon icon fa fa-graduation-cap">
                               </i>
                               Isncription </a></li>
                             <li class="slide">
