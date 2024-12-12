@@ -16,7 +16,6 @@ export class AdminComponent implements AfterViewInit {
   constructor(private renderer: Renderer2, private authService: AutheService, private router: Router, private userService:DataUserService) {}
 
   ngAfterViewInit(): void {
-    console.log('AdminComponent View Initialized');
     this.initializeSidebar();
     const storedUser = localStorage.getItem('user');
     if (storedUser) {

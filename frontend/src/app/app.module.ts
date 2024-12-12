@@ -24,6 +24,7 @@ import { JwtInterceptor } from './services/jwt-interceptor.service';
 import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
 import { NiveauComponent } from './components/niveau/niveau.component';
 import { DashboardDaaraComponent } from './components/dashboard-daara/dashboard-daara.component';
+import { CommonModule, NgIf } from '@angular/common';
 
 
 
@@ -57,7 +58,8 @@ import { DashboardDaaraComponent } from './components/dashboard-daara/dashboard-
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-
+    NgIf,
+    CommonModule
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
