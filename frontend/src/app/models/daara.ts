@@ -10,6 +10,9 @@ export class Daara {
     department_id!: number;
     responsable_id!: number;
     ief_id!: number;
+    region!: string;  // Par exemple, 'Dakar', 'Thies', etc.
+    type!: string;    // Par exemple, 'Moderne' ou 'Traditionnel'
+    
     // Nouveaux attributs pour stocker les informations complètes
     departement!: {
         id: number,

@@ -18,12 +18,24 @@ class UserSeeder extends Seeder
         for ($i = 1; $i <= 5; $i++) {
             User::create([
                 'nomUser' => "Responsable Daara",
-                'prenomUser' => $i, // Utilise le numéro pour distinguer les utilisateurs
+                'prenomUser' => $i,
                 'emailUser' => "bassinediallo20$i@gmail.com",
-                'mdpUser' => Hash::make('passer'), // Remplacez 'password' par le mot de passe désiré
+                'mdpUser' => Hash::make('passer'),
                 'telephoneUser' => "Téléphone $i",
                 'idProfil' => $responsableProfilId,
             ]);
         }
+
+        // Ajouter un utilisateur avec un autre profil, par exemple "Administrateur"
+        $adminProfilId = Profil::where('nomProfil', 'Administrateur')->first()->id;
+
+        User::create([
+            'nomUser' => "Administrateur",
+            'prenomUser' => "Principal",
+            'emailUser' => "admin@gmail.com",
+            'mdpUser' => Hash::make('passer'),
+            'telephoneUser' => "771234567",
+            'idProfil' => $adminProfilId,
+        ]);
     }
 }

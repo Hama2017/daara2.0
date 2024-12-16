@@ -207,13 +207,37 @@ private updateMap(): void {
       new Chart(ctxDonut, {
         type: 'pie',
         data: {
-          labels: ['Moderne', 'Traditionnel'], // Remplace par tes labels
+          labels: [
+            'Dakar - Moderne', 'Dakar - Traditionnel',
+            'Thiès - Moderne', 'Thiès - Traditionnel',
+            'Saint-Louis - Moderne', 'Saint-Louis - Traditionnel',
+            'Ziguinchor - Moderne', 'Ziguinchor - Traditionnel',
+            'Kaolack - Moderne', 'Kaolack - Traditionnel',
+            'Touba - Moderne', 'Touba - Traditionnel',
+            'Mbour - Moderne', 'Mbour - Traditionnel',
+            'Kolda - Moderne', 'Kolda - Traditionnel'
+          ],
           datasets: [{
             label: 'Nombre de daara',
-            data: [15, 5], // Remplace par tes données
+            data: [
+              10, 5,  // Dakar
+              8, 7,   // Thiès
+              4, 6,   // Saint-Louis
+              3, 5,   // Ziguinchor
+              6, 4,   // Kaolack
+              2, 3,   // Touba
+              5, 5,   // Mbour
+              3, 2    // Kolda
+            ], // Remplace par tes données réelles
             backgroundColor: [
-              '#09ad95',
-              '#17a2b8',
+              '#09ad95', '#17a2b8', // Dakar
+              '#ff5733', '#ffcc00', // Thiès
+              '#1e90ff', '#ff6347', // Saint-Louis
+              '#32cd32', '#ff1493', // Ziguinchor
+              '#ff4500', '#8a2be2', // Kaolack
+              '#ff8c00', '#4b0082', // Touba
+              '#6a5acd', '#ff1493', // Mbour
+              '#00ced1', '#f08080'  // Kolda
             ],
             hoverOffset: 20
           }]
@@ -226,10 +250,18 @@ private updateMap(): void {
             },
             tooltip: {
               enabled: true,
+              callbacks: {
+                label: function(tooltipItem) {
+                  // Afficher le nombre et la région dans le tooltip
+                  return tooltipItem.label + ': ' + tooltipItem.raw + ' daara';
+                }
+              }
             }
           }
         }
       });
     }
   }
+  
+  
 }
