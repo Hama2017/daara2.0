@@ -208,36 +208,21 @@ private updateMap(): void {
         type: 'pie',
         data: {
           labels: [
-            'Dakar - Moderne', 'Dakar - Traditionnel',
-            'Thiès - Moderne', 'Thiès - Traditionnel',
-            'Saint-Louis - Moderne', 'Saint-Louis - Traditionnel',
-            'Ziguinchor - Moderne', 'Ziguinchor - Traditionnel',
-            'Kaolack - Moderne', 'Kaolack - Traditionnel',
-            'Touba - Moderne', 'Touba - Traditionnel',
-            'Mbour - Moderne', 'Mbour - Traditionnel',
-            'Kolda - Moderne', 'Kolda - Traditionnel'
+            'Dakar', 'Thiès', 'Saint-Louis',
+            'Ziguinchor', 'Kaolack', 'Touba',
+            'Mbour', 'Kolda'
           ],
           datasets: [{
             label: 'Nombre de daara',
             data: [
-              10, 5,  // Dakar
-              8, 7,   // Thiès
-              4, 6,   // Saint-Louis
-              3, 5,   // Ziguinchor
-              6, 4,   // Kaolack
-              2, 3,   // Touba
-              5, 5,   // Mbour
-              3, 2    // Kolda
-            ], // Remplace par tes données réelles
+              15, 15, // Dakar, Thiès
+              10, 8,  // Saint-Louis, Ziguinchor
+              10, 5,  // Kaolack, Touba
+              10, 5   // Mbour, Kolda
+            ],
             backgroundColor: [
-              '#09ad95', '#17a2b8', // Dakar
-              '#ff5733', '#ffcc00', // Thiès
-              '#1e90ff', '#ff6347', // Saint-Louis
-              '#32cd32', '#ff1493', // Ziguinchor
-              '#ff4500', '#8a2be2', // Kaolack
-              '#ff8c00', '#4b0082', // Touba
-              '#6a5acd', '#ff1493', // Mbour
-              '#00ced1', '#f08080'  // Kolda
+              '#09ad95', '#ff5733', '#1e90ff', '#32cd32',
+              '#ff4500', '#ff8c00', '#6a5acd', '#00ced1'
             ],
             hoverOffset: 20
           }]
@@ -246,22 +231,33 @@ private updateMap(): void {
           responsive: true,
           plugins: {
             legend: {
-              position: 'top',
+              position: 'right', // Place la légende à droite
+              align: 'center',   // Centre la légende verticalement
+              labels: {
+                usePointStyle: true, // Affiche des points au lieu de carrés pour la légende
+                boxWidth: 10        // Réduit la taille des points
+              }
             },
             tooltip: {
               enabled: true,
               callbacks: {
                 label: function(tooltipItem) {
-                  // Afficher le nombre et la région dans le tooltip
                   return tooltipItem.label + ': ' + tooltipItem.raw + ' daara';
                 }
               }
+            }
+          },
+          layout: {
+            padding: {
+              right: 20 // Ajuste l'espace entre le graphique et la légende
             }
           }
         }
       });
     }
   }
+
+
   
   
 }
