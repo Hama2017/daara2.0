@@ -25,6 +25,7 @@ import { CreationApprenantComponent } from './components/creation-apprenant/crea
 import { NiveauComponent } from './components/niveau/niveau.component';
 import { DashboardDaaraComponent } from './components/dashboard-daara/dashboard-daara.component';
 import { CommonModule, NgIf } from '@angular/common';
+import { ListeNdongosComponent } from './components/liste-ndongos/liste-ndongos.component';
 
 
 
@@ -49,7 +50,8 @@ import { CommonModule, NgIf } from '@angular/common';
     EmailReadComponent,
     CreationApprenantComponent,
     NiveauComponent,
-    DashboardDaaraComponent
+    DashboardDaaraComponent,
+    ListeNdongosComponent
   ],
   imports: [
     BrowserModule,

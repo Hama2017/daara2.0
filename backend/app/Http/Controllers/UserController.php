@@ -15,7 +15,7 @@ class UserController extends Controller
     {
         try {
            // $user = User::all();
-            $user=User::with(['profil'])->get();
+            $user=User::all();
             return response()->json($user);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()], 500);

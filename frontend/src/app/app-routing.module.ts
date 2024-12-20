@@ -20,6 +20,7 @@ import { AuthGuard } from './AuthGuard';
 import { CreationApprenantComponent } from './components/creation-apprenant/creation-apprenant.component';
 import { NiveauComponent } from './components/niveau/niveau.component';
 import {DashboardDaaraComponent} from "./components/dashboard-daara/dashboard-daara.component";
+import { ListeNdongosComponent } from './components/liste-ndongos/liste-ndongos.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
       { path: '', component: DashboardDaaraComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'inscription', component: CreationApprenantComponent },
+      { path: 'liste-ndongos', component: ListeNdongosComponent },
       { path: 'ajout-typedocument', component: AjoutTypeDocumentComponent },
       { path: 'liste-typedocument', component: ListeTypeDocumentComponent },
       { path: 'edit-typedocument/:id', component: EditTypeDocumentComponent },
