@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators'; 
+import { tap } from 'rxjs/operators';
+import {ConstModule} from "../consts.module";
 import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutheService {
-
-  private apiUrl = 'http://localhost:8000/api'; // URL du backend Laravel
-
+  private const = new ConstModule();
+  private apiUrl = this.const.url ;
   constructor(private http: HttpClient) { }
 
   register(user: any): Observable<any> {
